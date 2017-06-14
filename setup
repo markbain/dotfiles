@@ -1,0 +1,78 @@
+# Chrome
+sudo apt install chromium-browser
+
+# Git
+sudo apt install git
+sudo apt-get install git-flow
+
+# Apache
+sudo apt install apache2
+
+# MySQL
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+
+# phpMyAdmin
+sudo apt-get install phpmyadmin
+sudo phpenmod mcrypt
+
+# Install curl
+sudo apt install curl
+
+# Install NPM
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+npm -v
+
+#Filezilla
+sudo apt install filezilla
+
+# Dropbox
+sudo apt install nautilus-dropbox
+
+# Gimp
+sudo apt install gimp
+
+# Inkscape
+sudo apt install inkscape
+
+# Shutter
+sudo apt install shutter
+
+# Sublime Text 3
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+
+
+# WP-CLI 
+# http://wp-cli.org/
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+php wp-cli.phar --info
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+wp --info
+
+# CrashPlan (manual)
+
+
+# RoverWire/virtualhost (manual)
+# https://github.com/RoverWire/virtualhost
+
+# Meld
+sudo apt-get install -y meld
+
+# 1. Add the Spotify repository signing key to be able to verify downloaded packages
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+
+# 2. Add the Spotify repository
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+
+# 3. Update list of available packages
+sudo apt-get update
+
+# 4. Install Spotify
+sudo apt-get install spotify-client
+
+# Gpick (color picker)
+sudo apt-get install -y gpick
