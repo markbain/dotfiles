@@ -77,5 +77,8 @@ sudo apt-get install spotify-client
 # Gpick (color picker)
 sudo apt-get install -y gpick
 
-# Grip 
+# Grip (MarkDown viewer)
 sudo apt-get install -y grip
+
+# Imagemagick
+sudo apt-get install -y imagemagick ghostscript
