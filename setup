@@ -1,23 +1,39 @@
-# Chrome
-sudo apt install chromium-browser
+#!/bin/bash
 
-# Git
-sudo apt install git
-sudo apt-get install git-flow
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+LIGHTBLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
-# Apache
-sudo apt install apache2
-
-# MySQL
-sudo apt-get install mysql-server
-sudo apt-get install mysql-client
-
-# phpMyAdmin
-sudo apt-get install phpmyadmin
-sudo phpenmod mcrypt
+#--------------------------------------------------------------------#
+#
+# 	Basic tools
+#
+#--------------------------------------------------------------------#
 
 # Install curl
-sudo apt install curl
+
+sudo apt-get install -y curl
+
+#--------------------------------------------------------------------#
+#
+# 	Development tools
+#
+#--------------------------------------------------------------------#
+
+# Virtualbox
+
+sudo apt install -y virtualbox virtualbox-ext-pack
+
+# Vagrant
+
+sudo apt-get install -y vagrant
+
+# Git
+sudo apt install -y git
+sudo apt-get install -y git-flow
+
+
 
 # Install NPM
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -25,24 +41,12 @@ sudo apt-get install -y nodejs
 npm -v
 
 #Filezilla
-sudo apt install filezilla
-
-# Dropbox
-sudo apt install nautilus-dropbox
-
-# Gimp
-sudo apt install gimp
-
-# Inkscape
-sudo apt install inkscape
-
-# Shutter
-sudo apt install shutter
+sudo apt install -y filezilla
 
 # Sublime Text 3
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-get update
-sudo apt-get install sublime-text-installer
+sudo apt-get install -y sublime-text-installer
 
 ################
 ## Terminator ##
@@ -90,32 +94,90 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 wp --info
 
-# CrashPlan (manual)
-
-
 # RoverWire/virtualhost (manual)
 # https://github.com/RoverWire/virtualhost
 
 # Meld
+
 sudo apt-get install -y meld
 
-# 1. Add the Spotify repository signing key to be able to verify downloaded packages
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-
-# 2. Add the Spotify repository
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-
-# 3. Update list of available packages
-sudo apt-get update
-
-# 4. Install Spotify
-sudo apt-get install spotify-client
-
-# Gpick (color picker)
-sudo apt-get install -y gpick
-
-# Grip (MarkDown viewer)
-sudo apt-get install -y grip
+#--------------------------------------------------------------------#
+# 
+# 	Image tools
+#
+#--------------------------------------------------------------------#
 
 # Imagemagick
+
 sudo apt-get install -y imagemagick ghostscript
+
+# Gpick (color picker)
+
+sudo apt-get install -y gpick
+
+# Gimp
+
+sudo apt install gimp
+
+# Inkscape
+
+sudo apt install inkscape
+
+# Shutter
+
+sudo apt install shutter
+
+#--------------------------------------------------------------------#
+#
+# 	Misc
+#
+#--------------------------------------------------------------------#
+
+# Gscan
+
+sudo apt-add-repository ppa:jeffreyratcliffe/ppa
+sudo apt-get update
+sudo apt-get install -y gscan2pdf
+
+# Chrome
+
+sudo apt install chromium-browser
+
+# Spotify
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update
+sudo apt-get install -y spotify-client
+
+# Dropbox
+
+sudo apt-get install -y nautilus-dropbox
+
+# Grip (MarkDown viewer)
+
+sudo apt-get install -y grip
+
+echo -e "${GREEN}Automatic installations completed.\n${NC}"
+
+#--------------------------------------------------------------------#
+#
+# 	Set default applications
+#
+#--------------------------------------------------------------------#
+
+sudo update-alternatives --all
+
+#--------------------------------------------------------------------#
+#
+# 	Manual install
+#
+#--------------------------------------------------------------------#
+
+echo -e "The following packages must be installed manually:"
+echo -e "${RED}* Crashplan\n${NC}"
+echo -e "${RED}* Firefox\n${NC}"
+echo -e "${RED}* Upwork client\n${NC}"
+echo -e "${RED}* Slack client\n${NC}"
+echo -e "${RED}* Skype client\n${NC}"
+echo -e "${RED}* Gitkraken\n${NC}"
