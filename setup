@@ -5,6 +5,10 @@ GREEN='\033[0;32m'
 LIGHTBLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# Refresh the apt cache, just in case this is not a brand new 
+# system.
+sudo apt-get update
+
 #--------------------------------------------------------------------#
 #
 # 	Basic tools
@@ -21,6 +25,20 @@ sudo apt-get install -y curl
 #
 #--------------------------------------------------------------------#
 
+# NVM, NodeJS, NPM
+
+# NVM v0.33.8
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Now use NVM ton install Node
+nvm install node
+
+# Grunt
+# We are installing this locally, as it runs much faster than in a VM.
+npm install -g grunt-cli
+
 # Virtualbox
 
 sudo apt install -y virtualbox virtualbox-ext-pack
@@ -33,12 +51,8 @@ sudo apt-get install -y vagrant
 sudo apt install -y git
 sudo apt-get install -y git-flow
 
-
-
-# Install NPM
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
-npm -v
+# Vim
+sudo apt-get install -y vim
 
 #Filezilla
 sudo apt install -y filezilla
@@ -121,19 +135,22 @@ sudo apt-get install -y gpick
 
 # Gimp
 
-sudo apt install gimp
+sudo apt install -y gimp
 
 # Inkscape
 
-sudo apt install inkscape
+sudo apt install -y inkscape
 
 # Shutter
 
-sudo apt install shutter
+sudo apt install -y shutter
 
 # Unrar
 
-sudo apt install unrar
+sudo apt install -y unrar
+
+# htop
+sudo apt install -y htop
 
 #--------------------------------------------------------------------#
 #
@@ -149,7 +166,7 @@ sudo apt-get install -y gscan2pdf
 
 # Chrome
 
-sudo apt install chromium-browser
+sudo apt install -y chromium-browser
 
 # Spotify
 
@@ -166,15 +183,23 @@ sudo apt-get install -y nautilus-dropbox
 
 sudo apt-get install -y grip
 
-echo -e "${GREEN}Automatic installations completed.\n${NC}"
-
 # OBS (Screen recording software)
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
-sudo apt install obs-studio
+sudo apt install -y obs-studio
 
 # Vokoscreen (Screen recording software)
-sudo apt-get install vokoscreen
+sudo apt-get install -y vokoscreen
+
+#--------------------------------------------------------------------#
+#
+# 	Ubuntu desktop environment
+#
+#--------------------------------------------------------------------#
+
+# Compiz
+# Named workspaces & more!
+sudo apt-get install -y compiz compizconfig-settings-manager compiz-plugins
 
 #--------------------------------------------------------------------#
 #
@@ -183,6 +208,9 @@ sudo apt-get install vokoscreen
 #--------------------------------------------------------------------#
 
 sudo update-alternatives --all
+
+# End of automatic install:
+echo -e "${GREEN}Automatic installations completed.\n${NC}"
 
 #--------------------------------------------------------------------#
 #
