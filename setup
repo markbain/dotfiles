@@ -107,6 +107,10 @@ sudo apt-get install -y meld
 #
 #--------------------------------------------------------------------#
 
+# digiKam
+
+sudo apt-get install -y digikam
+
 # Imagemagick
 
 sudo apt-get install -y imagemagick ghostscript
