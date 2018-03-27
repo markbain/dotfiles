@@ -135,19 +135,19 @@ sudo apt-get install -y gpick
 
 # Gimp
 
-sudo apt install gimp
+sudo apt install -y gimp
 
 # Inkscape
 
-sudo apt install inkscape
+sudo apt install -y inkscape
 
 # Shutter
 
-sudo apt install shutter
+sudo apt install -y shutter
 
 # Unrar
 
-sudo apt install unrar
+sudo apt install -y unrar
 
 # htop
 sudo apt install -y htop
@@ -166,7 +166,7 @@ sudo apt-get install -y gscan2pdf
 
 # Chrome
 
-sudo apt install chromium-browser
+sudo apt install -y chromium-browser
 
 # Spotify
 
@@ -188,10 +188,20 @@ echo -e "${GREEN}Automatic installations completed.\n${NC}"
 # OBS (Screen recording software)
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
-sudo apt install obs-studio
+sudo apt install -y obs-studio
 
 # Vokoscreen (Screen recording software)
-sudo apt-get install vokoscreen
+sudo apt-get install -y vokoscreen
+
+#--------------------------------------------------------------------#
+#
+# 	Ubuntu desktop environment
+#
+#--------------------------------------------------------------------#
+
+# Compiz
+# Named workspaces & more!
+sudo apt-get install -y compiz compizconfig-settings-manager compiz-plugins
 
 #--------------------------------------------------------------------#
 #
