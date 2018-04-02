@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#--------------------------------------------------------------------#
+#
+#       Set up pretty colors
+#
+#--------------------------------------------------------------------#
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+LIGHTBLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+#--------------------------------------------------------------------#
+#
+#       Create symlinks to dotfiles
+#
+#--------------------------------------------------------------------#
+
+echo -e "Creating symlinks...\n"
+
+ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
+ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
+ln -s ~/.dotfiles/oh-my-zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
+
+echo -e "${GREEN}Done!\n${NC}"

@@ -1,5 +1,5 @@
-# Ubuntu setup script
+# Bain Design Dotfiles
 
-## Version: 0.1.0
+## Version: 1.0.0
 
-Restore an Ubuntu development environment with (mostly) one shell script.
+My dotfiles :)

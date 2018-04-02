@@ -1,0 +1,12 @@
+[user]
+	email = markbaindesign@gmail.com
+	name = markbain
+[core]
+	excludesfile = /home/mark/.gitignore_global
+	autocrlf = input
+	filemode = false
+[merge]
+	tool = meld
+[diff]
+[mergetool]
+	keepBackup = false
