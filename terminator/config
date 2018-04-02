@@ -1,0 +1,118 @@
+[global_config]
+  always_split_with_profile = True
+  inactive_color_offset = 0.6
+  suppress_multiple_term_dialog = True
+  title_font = Roboto Mono for Powerline 9
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#7f8fa6"
+  title_inactive_fg_color = "#2f3640"
+  title_receive_bg_color = "#40739e"
+  title_transmit_bg_color = "#c23616"
+  title_transmit_fg_color = "#dcdde1"
+  title_use_system_font = False
+  window_state = maximise
+[keybindings]
+[layouts]
+  [[foo]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 56ff669e-0b6d-4ca1-8ec1-bbeded8920d7
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 65:97
+      size = 1855, 1056
+      title = mark@bain-design-2: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 921
+      ratio = 0.598113207547
+      type = HPaned
+    [[[child3]]]
+      order = 1
+      parent = child1
+      position = 525
+      ratio = 0.4
+      type = VPaned
+    [[[terminal2]]]
+      order = 0
+      parent = child1
+      profile = British
+      type = Terminal
+      uuid = 56ff669e-0b6d-4ca1-8ec1-bbeded8920d7
+      command = cd /media/mark/Data\ B/development/vvv_test_1/www/dev.foobot.io && ls -al; bash
+    [[[terminal4]]]
+      order = 0
+      parent = child3
+      profile = British
+      type = Terminal
+      uuid = 2495e356-7d91-4dbd-8983-81f9574a2ebd
+      command = cd /media/mark/Data\ B/development/vvv_test_1/www/dev.foobot.io && vagrant up && vagrant ssh && cd /vagrant/www/dev.foobot.io && grunt; bash
+    [[[terminal5]]]
+      order = 1
+      parent = child3
+      profile = British
+      type = Terminal
+      uuid = 49d66081-4e8a-43a8-af1b-27c2d9fc9d25
+      command = cd /media/mark/Data\ B/development/vvv_test_1/www/dev.foobot.io/ && tail -f htdocs/wp-content/debug.log; bash
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 56ff669e-0b6d-4ca1-8ec1-bbeded8920d7
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 65:97
+      size = 1855, 1056
+      title = mark@bain-design-2: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 921
+      ratio = 0.498113207547
+      type = HPaned
+    [[[child3]]]
+      order = 1
+      parent = child1
+      position = 525
+      ratio = 0.5
+      type = VPaned
+    [[[terminal2]]]
+      order = 0
+      parent = child1
+      profile = Flat
+      type = Terminal
+      uuid = 56ff669e-0b6d-4ca1-8ec1-bbeded8920d7
+    [[[terminal4]]]
+      order = 0
+      parent = child3
+      profile = British
+      type = Terminal
+      uuid = 2495e356-7d91-4dbd-8983-81f9574a2ebd
+    [[[terminal5]]]
+      order = 1
+      parent = child3
+      profile = British
+      type = Terminal
+      uuid = 49d66081-4e8a-43a8-af1b-27c2d9fc9d25
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#2c3e50"
+    background_image = None
+    font = Roboto Mono for Powerline 11
+    foreground_color = "#eeeeee"
+    palette = "#2c3e50:#c0392b:#16a085:#f39c12:#2980b9:#8e44ad:#27ae60:#bdc3c7:#555753:#e74c3c:#1abc9c:#f1c40f:#3498db:#9b59b6:#2ecc71:#ecf0f1"
+    use_system_font = False
+  [[British]]
+    background_color = "#192a56"
+    background_image = None
+    font = Roboto Mono for Powerline 11
+    foreground_color = "#f5f6fa"
+    palette = "#2f3640:#c23616:#44bd32:#e1b12c:#40739e:#8c7ae6:#0097e6:#dcdde1:#353b48:#e84118:#4cd137:#fbc531:#487eb0:#9c88ff:#00a8ff:#f5f6fa"
+    use_system_font = False
