@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 RED='\033[0;31m'
@@ -39,10 +40,6 @@ nvm install node
 # We are installing this locally, as it runs much faster than in a VM.
 npm install -g grunt-cli
 
-# Virtualbox
-
-sudo apt install -y virtualbox virtualbox-ext-pack
-
 # Vagrant
 
 sudo apt-get install -y vagrant
@@ -58,7 +55,7 @@ sudo apt-get install -y vim
 sudo apt install -y filezilla
 
 # Sublime Text 3
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 sudo apt-get update
 sudo apt-get install -y sublime-text-installer
 
@@ -66,7 +63,7 @@ sudo apt-get install -y sublime-text-installer
 ## Terminator ##
 ################
 
-sudo add-apt-repository ppa:gnome-terminator
+sudo add-apt-repository ppa:gnome-terminator -y
 sudo apt-get update
 sudo apt-get install -y terminator
 
@@ -160,7 +157,7 @@ sudo apt install -y htop
 
 # Gscan
 
-sudo apt-add-repository ppa:jeffreyratcliffe/ppa
+sudo apt-add-repository ppa:jeffreyratcliffe/ppa -y
 sudo apt-get update
 sudo apt-get install -y gscan2pdf
 
@@ -184,7 +181,7 @@ sudo apt-get install -y nautilus-dropbox
 sudo apt-get install -y grip
 
 # OBS (Screen recording software)
-sudo add-apt-repository ppa:obsproject/obs-studio
+sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo apt update
 sudo apt install -y obs-studio
 
@@ -217,6 +214,12 @@ echo -e "${GREEN}Automatic installations completed.\n${NC}"
 # 	Manual install
 #
 #--------------------------------------------------------------------#
+
+# The following apps require manual steps during the install process.
+
+# Virtualbox
+
+sudo apt install -y virtualbox virtualbox-ext-pack
 
 echo -e "The following packages must be installed manually:"
 echo -e "${RED}* Crashplan\n${NC}"
