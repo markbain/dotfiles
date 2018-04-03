@@ -44,6 +44,14 @@ echo -e "${GREEN}Git config symlinked\n${NC}"
 #
 #       Sublime Text 3
 
+# Setting dir is created at program launch
+# so we will create settings dir if it doesn't exist
+
+if [[ ! -d "$HOME/.config/sublime-text-3/Packages/User" ]]
+then
+	mkdir "$HOME/.config/sublime-text-3/Packages/User"
+fi
+
 if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" ]]
 then
 	mv "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" "$DOTFILES_BACKUP_DIR/sublime/Preferences.sublime-settings"
@@ -76,8 +84,13 @@ echo -e "${GREEN}ZSH config symlinked\n${NC}"
 #       Oh My ZSH
 
 ln -s ~/.dotfiles/oh-my-zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
+
+#--------------------------------------------------------------------#
+#
+#       Terminator
+
 mkdir ~/.config/terminator && ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
-echo -e "${GREEN}Oh My ZSH config symlinked\n${NC}"
+echo -e "${GREEN}Terminator config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
 #
