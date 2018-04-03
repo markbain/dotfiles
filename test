@@ -1,6 +1,7 @@
 #!/bin/bash
 
-unzip develop.zip
+wget https://github.com/markbain/dotfiles/archive/develop.zip
+unzip develop.zip && rm develop.zip
 mv dotfiles-develop .dotfiles
 cd .dotfiles
 chmod +x setup symlinks

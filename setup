@@ -73,37 +73,7 @@ sudo apt-get install -y terminator
 
 sudo apt-get install -y zsh
 
-# Make Zsh default shell
-chsh -s $(which zsh)
 
-#^^^^^^^^^^^^^#
-#> Oh My Zsh <#
-#
-#^^^^^^^^^^^^^#
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-###
-# Install patched Powerline fonts for use with agnostic Zsh theme
-###
-
-# clone
-git clone https://github.com/powerline/fonts.git
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-
-
-# WP-CLI 
-# http://wp-cli.org/
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-php wp-cli.phar --info
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
-wp --info
 
 # RoverWire/virtualhost (manual)
 # https://github.com/RoverWire/virtualhost
@@ -198,14 +168,6 @@ sudo apt-get install -y vokoscreen
 # Named workspaces & more!
 sudo apt-get install -y compiz compizconfig-settings-manager compiz-plugins
 
-#--------------------------------------------------------------------#
-#
-# 	Set default applications
-#
-#--------------------------------------------------------------------#
-
-sudo update-alternatives --all
-
 # End of automatic install:
 echo -e "${GREEN}Automatic installations completed.\n${NC}"
 
@@ -217,9 +179,49 @@ echo -e "${GREEN}Automatic installations completed.\n${NC}"
 
 # The following apps require manual steps during the install process.
 
+# Make Zsh default shell
+chsh -s $(which zsh)
+
+#^^^^^^^^^^^^^#
+#> Oh My Zsh <#
+#
+#^^^^^^^^^^^^^#
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+###
+# Install patched Powerline fonts for use with agnostic Zsh theme
+###
+
+# clone
+git clone https://github.com/powerline/fonts.git
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+
+# WP-CLI 
+# http://wp-cli.org/
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+php wp-cli.phar --info
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+wp --info
+
 # Virtualbox
 
 sudo apt install -y virtualbox virtualbox-ext-pack
+
+#--------------------------------------------------------------------#
+#
+# 	Set default applications
+#
+#--------------------------------------------------------------------#
+
+sudo update-alternatives --all
 
 echo -e "The following packages must be installed manually:"
 echo -e "${RED}* Crashplan\n${NC}"
