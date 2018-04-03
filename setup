@@ -33,7 +33,10 @@ echo -e "${GREEN}Grunt install task completed.\n${NC}"
 #
 # Add repos
 
-sudo add-apt-repository ppa:obsproject/obs-studio ppa:webupd8team/sublime-text-3 ppa:gnome-terminator ppa:jeffreyratcliffe/ppa -y
+sudo add-apt-repository ppa:obsproject/obs-studio -y
+sudo add-apt-repository ppa:jeffreyratcliffe/ppa -y
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+sudo add-apt-repository ppa:gnome-terminator -y
 echo -e "${GREEN}Add repos task completed.\n${NC}"
 
 #--------------------------------------------------------------------#
