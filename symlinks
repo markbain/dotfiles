@@ -11,19 +11,57 @@ GREEN='\033[0;32m'
 LIGHTBLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_BACKUP_DIR="$HOME/.dotfiles_backup"
+
 #--------------------------------------------------------------------#
 #
-#       Create symlinks to dotfiles
-#
+#       Set up backup location
+
+mkdir $DOTFILES_BACKUP_DIR $DOTFILES_BACKUP_DIR/bash $DOTFILES_BACKUP_DIR/git $DOTFILES_BACKUP_DIR/oh-my-zsh $DOTFILES_BACKUP_DIR/ssh $DOTFILES_BACKUP_DIR/sublime $DOTFILES_BACKUP_DIR/terminator $DOTFILES_BACKUP_DIR/wp-cli $DOTFILES_BACKUP_DIR/zsh
+echo -e "${GREEN}Backup dir created.\n${NC}"
+
 #--------------------------------------------------------------------#
+#
+#       Bash
 
-echo -e "Creating symlinks...\n"
+if [[ -f "$HOME/.bashrc" ]]
+then
+	mv $HOME/.bashrc $DOTFILES_BACKUP_DIR/bash/.bashrc
+	ln -s $DOTFILES_DIR/bash/bashrc ~/.bashrc
+fi
+echo -e "${GREEN}Bash config symlinked\n${NC}"
 
-ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
+#--------------------------------------------------------------------#
+#
+#       Git
+
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
-ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+echo -e "${GREEN}Git config symlinked\n${NC}"
+
+#--------------------------------------------------------------------#
+#
+#       ZSH
+
+if [[ -f "$HOME/.zshrc" ]]
+then
+	mv $HOME/.zshrc $DOTFILES_BACKUP_DIR/zsh/.zshrc
+	ln -s $DOTFILES_DIR/zsh/zshrc $HOME/.zshrc
+fi
+echo -e "${GREEN}ZSH config symlinked\n${NC}"
+
+#--------------------------------------------------------------------#
+#
+#       Oh My ZSH
+
 ln -s ~/.dotfiles/oh-my-zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
 mkdir ~/.config/terminator && ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
+echo -e "${GREEN}Oh My ZSH config symlinked\n${NC}"
 
-echo -e "${GREEN}Done!\n${NC}"
+#--------------------------------------------------------------------#
+#
+# Make a noise!
+
+echo -en "\007" 
+echo -e "${GREEN}Symlinking done!\n${NC}"
