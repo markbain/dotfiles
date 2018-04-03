@@ -42,6 +42,17 @@ echo -e "${GREEN}Git config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
 #
+#       Sublime Text 3
+
+if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" ]]
+then
+	mv $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings $DOTFILES_BACKUP_DIR/sublime/Preferences.sublime-settings
+	ln -s $DOTFILES_DIR/sublime/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+fi
+echo -e "${GREEN}Sublime config symlinked\n${NC}"
+
+#--------------------------------------------------------------------#
+#
 #       ZSH
 
 if [[ -f "$HOME/.zshrc" ]]
