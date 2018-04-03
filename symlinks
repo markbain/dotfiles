@@ -28,8 +28,8 @@ echo -e "${GREEN}Backup dir created.\n${NC}"
 if [[ -f "$HOME/.bashrc" ]]
 then
 	mv $HOME/.bashrc $DOTFILES_BACKUP_DIR/bash/.bashrc
-	ln -s $DOTFILES_DIR/bash/bashrc ~/.bashrc
 fi
+ln -s $DOTFILES_DIR/bash/bashrc ~/.bashrc
 echo -e "${GREEN}Bash config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
@@ -47,8 +47,8 @@ echo -e "${GREEN}Git config symlinked\n${NC}"
 if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" ]]
 then
 	mv $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings $DOTFILES_BACKUP_DIR/sublime/Preferences.sublime-settings
-	ln -s $DOTFILES_DIR/sublime/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 fi
+ln -s $DOTFILES_DIR/sublime/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 echo -e "${GREEN}Sublime config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
@@ -58,8 +58,8 @@ echo -e "${GREEN}Sublime config symlinked\n${NC}"
 if [[ -f "$HOME/.zshrc" ]]
 then
 	mv $HOME/.zshrc $DOTFILES_BACKUP_DIR/zsh/.zshrc
-	ln -s $DOTFILES_DIR/zsh/zshrc $HOME/.zshrc
 fi
+	ln -s $DOTFILES_DIR/zsh/zshrc $HOME/.zshrc
 echo -e "${GREEN}ZSH config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#

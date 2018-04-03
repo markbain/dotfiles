@@ -1,0 +1,53 @@
+{
+	"added_words":
+	[
+		"Shortcodes",
+		"shortcodes",
+		"markbaindesign",
+		"Plugin",
+		"Bain",
+		"http",
+		"mbd",
+		"wp",
+		"php",
+		"cpt",
+		"dashicons",
+		"Shortcode",
+		"url",
+		"blog",
+		"shiftnav",
+		"stylesheet",
+		"modernizr",
+		"autoprefixer",
+		"inline"
+	],
+	"auto_match_enabled": false,
+	"caret_extra_width": 3,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"DeleteBlankLines",
+		"Vintage"
+	],
+	"ignored_words":
+	[
+		"Callout",
+		"Diff",
+		"Locator",
+		"css",
+		"diff",
+		"httpdocs",
+		"ico",
+		"jaffa",
+		"js",
+		"plugins",
+		"png",
+		"stylesheets",
+		"swp"
+	],
+	"spell_check": true,
+	"theme": "Spacegray.sublime-theme"
+}
