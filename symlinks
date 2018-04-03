@@ -49,7 +49,7 @@ echo -e "${GREEN}Git config symlinked\n${NC}"
 
 if [[ ! -d "$HOME/.config/sublime-text-3/Packages/User" ]]
 then
-	mkdir "$HOME/.config/sublime-text-3/Packages/User"
+	mkdir -pv "$HOME/.config/sublime-text-3/Packages/User"
 fi
 
 if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" ]]
