@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+<li> 
+  <!-- carousel item -->
+  <div id="${1:this} " class="item">
+    <div class="text-wrap white">
+      <h3>${2:this}</h3>
+      <div class="photo-wrap"><span class="speaker-name">${2} </span> <img src="assets/images/photos/${1:this}" alt="${2} "> </div>
+      <hr class="divider-short center">
+      <p class="description">${3:this} </p>
+    </div>
+    <div class="tags"> 
+      <ul>
+        <li class="tag-technology">Technology</li>
+        <li class="tag-methodology">Methodology</li>
+        <li class="tag-materials">Materials</li>
+        <li class="tag-management">Management</li>
+      </ul>
+  </div>
+  <!-- end carousel item --> 
+</li>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sesh</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

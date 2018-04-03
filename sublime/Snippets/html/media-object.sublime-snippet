@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+<div class="media-object ${1:}">
+	<div class="media-object-media">
+		${2:media}
+	</div><!-- .media-object-media -->
+	<article class="media-object-content">
+		<header>${3:header content here}</header>
+		<p>${4:Bacon ipsum dolor amet frankfurter ham ham hock fatback, venison chicken jerky shankle chuck drumstick. Tenderloin biltong turducken, picanha doner pork loin ham hock andouille pig cow drumstick ribeye turkey. }</p>
+		<footer>${5:footer content goes here}</footer>
+	</article><!-- .media-object-content -->
+</div><!-- .media-object -->
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

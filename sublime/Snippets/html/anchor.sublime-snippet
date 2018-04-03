@@ -1,0 +1,9 @@
+<snippet>
+	<content>
+		<![CDATA[<a href="${1:#}" ${2:class="${3}"} title="${4:Lorem ipsum dolor sit amet, consectetur adipisicing elit.}" ${5:rel="${6}"} ${7:target="${8}"}>${9:Lorem ipsum dolor sit amet}</a>]]>
+	</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>anchor</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

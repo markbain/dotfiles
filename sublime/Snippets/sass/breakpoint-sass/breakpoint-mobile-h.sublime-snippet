@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+@include breakpoint( \$mobile-horizontal ) {
+	${2:}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bpmh</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sass</scope>
+	<!-- Optional: Description to show in the menu -->
+    <description>Add $mobile-horizontal breakpoint-sass media query</description>
+</snippet>

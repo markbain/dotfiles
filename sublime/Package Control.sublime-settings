@@ -1,0 +1,32 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"3024 Color Scheme",
+		"Additional PHP Snippets",
+		"Color Highlighter",
+		"ColorPicker",
+		"DeleteBlankLines",
+		"Hex to HSL Color Converter",
+		"INI",
+		"Monarch",
+		"Package Control",
+		"Phpcs",
+		"Sass",
+		"SASS Snippets",
+		"SassSolution",
+		"Sassy Comments",
+		"SCSS Snippets",
+		"Theme - Brogrammer",
+		"Theme - itg.flat",
+		"Theme - Numix",
+		"Theme - Soda SolarizedDark",
+		"Theme - Spacegray",
+		"Volt",
+		"WordPress",
+		"WordPress Developer Resources"
+	]
+}

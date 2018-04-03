@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+<li><!-- carousel item -->
+  <div id="${1}" class="item">
+    <div class="photo-wrap hover_colour"> <img src="assets/images/photos/${1}.png" alt="${3}"> </div>
+    <div class="text-wrap white">
+      <h3>${3}</h3>
+      <hr class="divider-short center">
+      <p class="description">${5}<br><br></p>
+    </div>
+    <div class="social">
+    	<a href="${6}" target="_blank" title="Website" class="icon-wrap small website"> <i class="iconf-link"></i> </a>
+    	<a href="${7}" target="_blank" title="Facebook" class="icon-wrap small facebook"> <i class="iconf-facebook"></i> </a>
+      	<a href="${8}" target="_blank" title="LinkedIn" class="icon-wrap small linkedin"> <i class="iconf-linkedin"></i> </a>
+      	<a href="${9}" target="_blank" title="Twitter" class="icon-wrap small twitter"> <i class="iconf-twitter"></i> </a>
+    </div>
+  </div>
+</li><!-- end carousel item -->  
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>car</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

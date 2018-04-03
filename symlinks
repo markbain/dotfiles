@@ -46,9 +46,18 @@ echo -e "${GREEN}Git config symlinked\n${NC}"
 
 if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" ]]
 then
-	mv $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings $DOTFILES_BACKUP_DIR/sublime/Preferences.sublime-settings
+	mv "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" "$DOTFILES_BACKUP_DIR/sublime/Preferences.sublime-settings"
 fi
-ln -s $DOTFILES_DIR/sublime/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+ln -s "$DOTFILES_DIR/sublime/Preferences.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+
+if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" ]]
+then
+	mv "$HOME/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" "$DOTFILES_BACKUP_DIR/sublime/Package Control.sublime-settings"
+fi
+ln -s "$DOTFILES_DIR/sublime/Package Control.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
+
+ln -s "$DOTFILES_DIR/sublime/Snippets" "$HOME/.config/sublime-text-3/Packages/User/Snippets"
+
 echo -e "${GREEN}Sublime config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#

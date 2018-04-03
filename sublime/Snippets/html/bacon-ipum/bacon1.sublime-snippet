@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+<p>Bacon ipsum dolor amet salami <a href="#" title="flank jowl pastrami capicola">flank jowl pastrami capicola</a> leberkas corned beef. Beef salami turducken boudin pig shank corned beef sausage flank bresaola <strong>venison jerky drumstick tail</strong>. Pastrami cupim brisket short loin, kevin flank shank bresaola porchetta tenderloin drumstick pancetta. Fatback salami <em>corned beef alcatra, ribeye ground round chuck tri-tip picanha flank porchetta</em>. Picanha bacon <a href="#" title="sirloin prosciutto">sirloin prosciutto</a>.</p>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bacon</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

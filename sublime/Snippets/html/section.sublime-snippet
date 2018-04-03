@@ -1,0 +1,20 @@
+<snippet>
+	<content>
+		<![CDATA[
+<div id="${1:section-id}" class="section $2">
+	<div class="container $3">
+		<header class="section-header">
+			<h2>${4:Section Header}</h2>
+			<div class="section-intro">${5:This is a section intro.}</div>
+		</header>
+		<article>${6:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid est, quod ab ea absolvi et perfici debeat? Eaedem res maneant alio modo. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Ita prorsus, inquam; Apud ceteros autem philosophos, qui quaesivit aliquid, tacet; Atque ab isto capite fluere necesse est omnem rationem bonorum et malorum. Restatis igitur vos; Duo Reges: constructio interrete.}</article>
+		<footer class="section-footer">${7:This is a section footer.}</footer>  
+	</div><!-- .container $3 -->
+</div><!-- #${1:section-id} .section $2 -->
+		]]>
+	</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sec</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

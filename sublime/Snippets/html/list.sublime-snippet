@@ -1,0 +1,17 @@
+<snippet>
+	<content>
+		<![CDATA[
+
+<ul id="${1:list-id}" class="${2:list-class}">
+	<li class="${3:list-item-class}">
+		<a href="#" class="${3:link-class}" rel="${2:link-rel}">${4:Lorem ipsum}</a>   
+	</li><!-- .${3:list-item-class} -->
+</ul><!-- #${1:list-id} .${2:list-class} -->
+
+		]]>
+	</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>list</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
