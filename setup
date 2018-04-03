@@ -58,7 +58,7 @@ echo -e "${GREEN}Apt-get update task completed.\n${NC}"
 #
 # Automatic install
 
-sudo apt install -y chromium-browser compiz compizconfig-settings-manager compiz-plugins curl digikam git git-flow grip filezilla ghostscriptmeld gimp gpick gscan2pdf htop inkscape imagemagick nautilus-dropbox obs-studio shutter spotify-client sublime-text-installer terminator unrar vagrant vim vokoscreen zsh
+sudo apt install -y chromium-browser compiz compizconfig-settings-manager compiz-plugins curl digikam git git-flow filezilla ghostscript meld gimp gpick gscan2pdf htop inkscape imagemagick nautilus-dropbox obs-studio shutter spotify-client sublime-text-installer terminator unrar vagrant vim vokoscreen zsh
 echo -e "${GREEN}Apt install tasks completed.\n${NC}"
 
 #--------------------------------------------------------------------#
