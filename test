@@ -6,3 +6,4 @@ mv dotfiles-develop .dotfiles
 cd .dotfiles
 chmod +x setup symlinks
 ./setup
+./symlinks
