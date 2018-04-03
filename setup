@@ -35,8 +35,8 @@ echo -e "${GREEN}Grunt install task completed.\n${NC}"
 
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo add-apt-repository ppa:jeffreyratcliffe/ppa -y
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
-sudo add-apt-repository ppa:gnome-terminator -y
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y # Sublime Text 3
+sudo add-apt-repository ppa:gnome-terminator -y # Terminator
 echo -e "${GREEN}Add repos task completed.\n${NC}"
 
 #--------------------------------------------------------------------#
@@ -67,8 +67,8 @@ echo -e "${GREEN}Apt install tasks completed.\n${NC}"
 #
 # Make Zsh default shell
 
-# chsh -s $(which zsh)
-# echo -e "${GREEN}Default shell task completed.\n${NC}"
+chsh -s $(which zsh)
+echo -e "${GREEN}Default shell task completed.\n${NC}"
 
 #--------------------------------------------------------------------#
 #
