@@ -73,11 +73,6 @@ sudo apt-get install -y terminator
 
 sudo apt-get install -y zsh
 
-
-
-# RoverWire/virtualhost (manual)
-# https://github.com/RoverWire/virtualhost
-
 # Meld
 
 sudo apt-get install -y meld
