@@ -1,32 +1,18 @@
 
 #!/bin/bash
 
+#--------------------------------------------------------------------#
+#
+# Set up colors
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 LIGHTBLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Refresh the apt cache, just in case this is not a brand new 
-# system.
-sudo apt-get update
-
 #--------------------------------------------------------------------#
 #
-# 	Basic tools
-#
-#--------------------------------------------------------------------#
-
-# Install curl
-
-sudo apt-get install -y curl
-
-#--------------------------------------------------------------------#
-#
-# 	Development tools
-#
-#--------------------------------------------------------------------#
-
-# NVM, NodeJS, NPM
+# Install NVM, NodeJS, NPM
 
 # NVM v0.33.8
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
@@ -40,172 +26,71 @@ nvm install node
 # We are installing this locally, as it runs much faster than in a VM.
 npm install -g grunt-cli
 
-# Vagrant
-
-sudo apt-get install -y vagrant
-
-# Git
-sudo apt install -y git
-sudo apt-get install -y git-flow
-
-# Vim
-sudo apt-get install -y vim
-
-#Filezilla
-sudo apt install -y filezilla
-
-# Sublime Text 3
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
-sudo apt-get update
-sudo apt-get install -y sublime-text-installer
-
-################
-## Terminator ##
-################
-
-sudo add-apt-repository ppa:gnome-terminator -y
-sudo apt-get update
-sudo apt-get install -y terminator
-
-#########
-## Zsh ##
-#########
-
-sudo apt-get install -y zsh
-
-# Meld
-
-sudo apt-get install -y meld
-
 #--------------------------------------------------------------------#
-# 
-# 	Image tools
 #
-#--------------------------------------------------------------------#
+# Add repos
 
-# digiKam
-
-sudo apt-get install -y digikam
-
-# Imagemagick
-
-sudo apt-get install -y imagemagick ghostscript
-
-# Gpick (color picker)
-
-sudo apt-get install -y gpick
-
-# Gimp
-
-sudo apt install -y gimp
-
-# Inkscape
-
-sudo apt install -y inkscape
-
-# Shutter
-
-sudo apt install -y shutter
-
-# Unrar
-
-sudo apt install -y unrar
-
-# htop
-sudo apt install -y htop
+sudo add-apt-repository ppa:obsproject/obs-studio ppa:webupd8team/sublime-text-3 ppa:gnome-terminator ppa:jeffreyratcliffe/ppa -y
 
 #--------------------------------------------------------------------#
 #
-# 	Misc
-#
-#--------------------------------------------------------------------#
-
-# Gscan
-
-sudo apt-add-repository ppa:jeffreyratcliffe/ppa -y
-sudo apt-get update
-sudo apt-get install -y gscan2pdf
-
-# Chrome
-
-sudo apt install -y chromium-browser
-
-# Spotify
+# Add Apt key for Spotify
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+
+#--------------------------------------------------------------------#
+#
+# Update
+
 sudo apt-get update
-sudo apt-get install -y spotify-client
-
-# Dropbox
-
-sudo apt-get install -y nautilus-dropbox
-
-# Grip (MarkDown viewer)
-
-sudo apt-get install -y grip
-
-# OBS (Screen recording software)
-sudo add-apt-repository ppa:obsproject/obs-studio -y
-sudo apt update
-sudo apt install -y obs-studio
-
-# Vokoscreen (Screen recording software)
-sudo apt-get install -y vokoscreen
 
 #--------------------------------------------------------------------#
 #
-# 	Ubuntu desktop environment
-#
-#--------------------------------------------------------------------#
+# Automatic install
 
-# Compiz
-# Named workspaces & more!
-sudo apt-get install -y compiz compizconfig-settings-manager compiz-plugins
-
-# End of automatic install:
-echo -e "${GREEN}Automatic installations completed.\n${NC}"
+sudo apt install -y chromium-browser compiz compizconfig-settings-manager compiz-plugins curl digikam git git-flow grip filezilla ghostscriptmeld gimp gpick gscan2pdf htop inkscape imagemagick nautilus-dropbox obs-studio shutter spotify-client sublime-text-installer terminator unrar vagrant vim vokoscreen zsh
 
 #--------------------------------------------------------------------#
 #
-# 	Manual install
-#
-#--------------------------------------------------------------------#
-
-# The following apps require manual steps during the install process.
-
 # Make Zsh default shell
+
 chsh -s $(which zsh)
 
-#^^^^^^^^^^^^^#
-#> Oh My Zsh <#
+#--------------------------------------------------------------------#
 #
-#^^^^^^^^^^^^^#
+# Install Oh My ZSH
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+0>/dev/null sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-###
+#--------------------------------------------------------------------#
+#
 # Install patched Powerline fonts for use with agnostic Zsh theme
-###
 
-# clone
 git clone https://github.com/powerline/fonts.git
-# install
 cd fonts
 ./install.sh
-# clean-up a bit
 cd ..
 rm -rf fonts
 
-
+#--------------------------------------------------------------------#
+#
 # WP-CLI 
-# http://wp-cli.org/
+
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 php wp-cli.phar --info
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 wp --info
 
+#--------------------------------------------------------------------#
+#
+# Announce end of automatic install:
+
+echo -e "${GREEN}Automatic installations completed.\n${NC}"
+
+#--------------------------------------------------------------------#
+#
 # Virtualbox
 
 sudo apt install -y virtualbox virtualbox-ext-pack
