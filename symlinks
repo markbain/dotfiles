@@ -23,7 +23,7 @@ ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
 ln -s ~/.dotfiles/oh-my-zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
+mkdir ~/.config/terminator && ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
 
 echo -e "${GREEN}Done!\n${NC}"
