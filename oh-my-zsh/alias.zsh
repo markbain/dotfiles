@@ -5,6 +5,8 @@ alias zshconf='go ~/.oh-my-zsh/custom/example.zsh'
 # Vagrant
 alias vu='vagrant up'
 alias vh='vagrant halt'
+alias vvv200-up='cd /media/mark/Data\ B/development/vvv_test_1/ && vagrant up' # start VVV v.2.0.0 VM
+alias vvv210-up='cd /media/mark/Data\ B/development/vvv/ && vagrant up' # start VVV v.2.1.0 VM
 
 alias dev_root='cd /media/mark/Data\ B/development/vvv/www/'
 alias dev_ipass='cd /media/mark/Data\ B/development/ipass_scotch/'
@@ -93,3 +95,4 @@ alias la='ls -al'
 alias hud='screenfetch'
 alias dnsflush='sudo /etc/init.d/nscd restart' # Clear the DNS cache
 alias go='gnome-open' # Open a file in another application
+alias top10='sudo du -hsx * | sort -rh | head -10' # Show the 10 largest dirs or files
