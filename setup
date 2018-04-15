@@ -116,7 +116,6 @@ sudo update-alternatives --all
 
 echo -e "The following packages must be installed manually:"
 echo -e "${RED}* Crashplan\n${NC}"
-echo -e "${RED}* Firefox\n${NC}"
 echo -e "${RED}* Upwork client\n${NC}"
 echo -e "${RED}* Slack client\n${NC}"
 echo -e "${RED}* Skype client\n${NC}"
