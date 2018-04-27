@@ -32,7 +32,8 @@ alias dev_mhy='cd /media/mark/Data\ B/development/vvv/www/'
 # Client projects
 
     ## Ruby Tapas
-    alias ssh_ruby='ssh wp_xkwiqr@67.205.16.93' # SSH to production server
+    alias ssh_ruby_prod='ssh wp_xkwiqr@67.205.16.93' # SSH to production server
+    alias ssh_ruby_stag='ssh wp_jxdneh@208.113.143.141' # SSH to staging server
 
     alias go_ruby='terminator -m --layout=dev && ssh_ruby'
 
