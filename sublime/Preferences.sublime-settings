@@ -19,7 +19,9 @@
 		"stylesheet",
 		"modernizr",
 		"autoprefixer",
-		"inline"
+		"inline",
+		"infographic",
+		"plugin"
 	],
 	"auto_match_enabled": false,
 	"caret_extra_width": 3,
