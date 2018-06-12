@@ -53,7 +53,7 @@ then
 fi
 if [[ -f "$HOME/.config/sublime-text-3/Installed Packages" ]]
 then
-	mv "$HOME/.config/sublime-text-3/Installed Packages" "$DOTFILES_BACKUP_DIR/sublime/Installed Packages"
+	mv "$HOME/.config/sublime-text-3/Installed Packages" "$DOTFILES_BACKUP_DIR/sublime"
 fi
 ln -s "$DOTFILES_DIR/sublime/Installed Packages" "$HOME/.config/sublime-text-3/Installed Packages"
 if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" ]]
@@ -68,7 +68,7 @@ then
 fi
 ln -s "$DOTFILES_DIR/sublime/Package Control.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
 
-ln -s "$DOTFILES_DIR/sublime/Snippets" "$HOME/.config/sublime-text-3/Packages/User/Snippets"
+ln -s "$DOTFILES_DIR/sublime/Snippets" "$HOME/.config/sublime-text-3/Packages/User"
 
 echo -e "${GREEN}Sublime config symlinked\n${NC}"
 
