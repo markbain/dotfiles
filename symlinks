@@ -51,7 +51,11 @@ if [[ ! -d "$HOME/.config/sublime-text-3/Packages/User" ]]
 then
 	mkdir -pv "$HOME/.config/sublime-text-3/Packages/User"
 fi
-
+if [[ -f "$HOME/.config/sublime-text-3/Installed Packages" ]]
+then
+	mv "$HOME/.config/sublime-text-3/Installed Packages" "$DOTFILES_BACKUP_DIR/sublime/Installed Packages"
+fi
+ln -s "$DOTFILES_DIR/sublime/Installed Packages" "$HOME/.config/sublime-text-3/Installed Packages"
 if [[ -f "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" ]]
 then
 	mv "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" "$DOTFILES_BACKUP_DIR/sublime/Preferences.sublime-settings"
