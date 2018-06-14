@@ -2,7 +2,7 @@
 	email = markbaindesign@gmail.com
 	name = markbain
 [core]
-	excludesfile = /home/mark/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	filemode = false
 [merge]
