@@ -1,0 +1,58 @@
+---
+sites:
+  dev.oxford-tefl.com:
+  dev.oxfordtefl.com:
+  wp-project-base.test:
+  watershedretreat:
+  dev.oxfordhousebcn.com:
+  dev.innovateelt.com:
+  dev.rubytapas.com:
+  dev.innovateevents.com:
+  wp-project-base:
+  harry_test:
+  foobot_test:
+  mhairimcfarlane.com:
+  dev.alexwright.org:
+  dev.mnml:
+  dev.foobot.io:
+  howdy:
+  foo_bot:
+  watershed_retreat:
+  ruby_tapas:
+  makehimyours:
+  test2:
+  bain_design:
+  # The wordpress-default configuration provides a default installation of the
+  # latest version of WordPress.
+  wordpress-default:
+    repo: https://github.com/Varying-Vagrant-Vagrants/vvv-wordpress-default.git
+    hosts:
+      - local.wordpress.dev
+
+  # The wordpress-develop configuration is useful for contributing to WordPress.
+  wordpress-develop:
+    repo: https://github.com/Varying-Vagrant-Vagrants/vvv-wordpress-develop.git
+    hosts:
+      - src.wordpress-develop.dev
+      - build.wordpress-develop.dev
+
+  # The following commented out site configuration will create a standard WordPress
+  # site in www/example-site/ available at http://my-example-site.dev.
+
+  make_him_yours:
+    # repo: git@bitbucket.org:markbaindesign/make-him-yours.git
+    hosts:
+     - dev.makehimyours.com.au
+
+  # The following commented out site configuration will create a environment useful
+  # for contributions to the WordPress meta team:
+  
+  #wordpress-meta-environment:
+  #  repo: https://github.com/WordPress/meta-environment.git
+
+utilities:
+  core:
+    - memcached-admin
+    - opcache-status
+    - phpmyadmin
+    - webgrind
