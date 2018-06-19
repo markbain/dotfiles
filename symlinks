@@ -100,8 +100,11 @@ echo -e "${GREEN}Terminator config symlinked\n${NC}"
 #
 #       VVV
 
-ln -s ~/.dotfiles/vvv/vvv-custom.yml ~/Development/vvv/
-echo -e "${GREEN}VVV vvv-custom.yml symlinked\n${NC}"
+ln -s ~/.dotfiles/vvv/2.0.0/vvv-custom.yml ~/Development/vvv/2.0.0/vvv-custom.yml
+echo -e "${GREEN}VVV 2.0.0 vvv-custom.yml symlinked\n${NC}"
+
+ln -s ~/.dotfiles/vvv/2.1.0/vvv-custom.yml ~/Development/vvv/2.1.0/vvv-custom.yml
+echo -e "${GREEN}VVV 2.1.0 vvv-custom.yml symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
 #
