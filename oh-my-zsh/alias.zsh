@@ -5,6 +5,7 @@ alias zshconf='go ~/.oh-my-zsh/custom/example.zsh'
 # Vagrant
 alias vu='vagrant up'
 alias vh='vagrant halt'
+alias vs='vagrant ssh'
 alias vvv200-up='cd /media/mark/Data\ B/development/vvv_test_1/ && vagrant up' # start VVV v.2.0.0 VM
 alias vvv210-up='cd /media/mark/Data\ B/development/vvv/ && vagrant up' # start VVV v.2.1.0 VM
 

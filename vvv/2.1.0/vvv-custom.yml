@@ -1,0 +1,39 @@
+---
+sites:
+
+  #custom-site-template:
+    #repo: https://github.com/markbaindesign/custom-site-template.git
+    #hosts: 
+      #- custom-site-template.test
+
+  empowerment-academy:
+    repo: https://github.com/markbaindesign/custom-site-template.git
+    hosts: 
+      - empowerment-academy.test
+
+  vvv-wordpress-default:
+    repo: https://github.com/Varying-Vagrant-Vagrants/vvv-wordpress-default.git
+    hosts: 
+      - vvv-wordpress-default.test
+
+  oxfordtefl:
+    repo: git@bitbucket.org:markbaindesign/oxfordtefl.git
+    hosts: 
+      - oxfordtefl.test
+
+  make_him_yours:
+    repo: git@bitbucket.org:markbaindesign/make-him-yours.git
+    hosts: 
+      - make_him_yours.test
+
+  goldenstatekiller:
+    repo: https://github.com/markbaindesign/custom-site-template.git
+    hosts: 
+      - goldenstatekiller.test
+
+utilities:
+  core:
+    - memcached-admin
+    - opcache-status
+    - phpmyadmin
+    - webgrind

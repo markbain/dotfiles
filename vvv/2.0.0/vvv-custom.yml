@@ -1,0 +1,32 @@
+---
+sites:
+  ##dev.oxford-tefl.com:
+  #dev.oxfordtefl.com:
+  #wp-project-base.test:
+  #watershedretreat:
+  #dev.oxfordhousebcn.com:
+  #dev.innovateelt.com:
+  rubytapas.com:
+    repo: git@gitlab.com:shiprise/rubytapas.com.git
+    hosts:
+      - dev.rubytapas.com
+  #dev.innovateevents.com:
+  #wp-project-base:
+  #mhairimcfarlane.com:
+  #dev.alexwright.org:
+  foobot_site_v2:
+    repo: git@bitbucket.org:adrien_lafond/foobot_site_v2.git
+    hosts:
+      - dev.foobot.io
+  #watershed_retreat:
+  #ruby_tapas:
+  #makehimyours:
+  #bain_design:
+
+utilities:
+  core:
+    - memcached-admin
+    - opcache-status
+    - phpmyadmin
+    - webgrind
+    - trusted-hosts
