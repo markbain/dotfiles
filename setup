@@ -90,6 +90,12 @@ echo -e "${GREEN}Powerline install task completed.\n${NC}"
 
 #--------------------------------------------------------------------#
 #
+# Install Oh My ZSH plugins
+
+git clone https://github.com/bobthecow/git-flow-completion ~/.oh-my-zsh/custom/plugins/git-flow-completion
+
+#--------------------------------------------------------------------#
+#
 # WP-CLI 
 
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
