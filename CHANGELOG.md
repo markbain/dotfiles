@@ -5,6 +5,8 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ## [Unreleased][unreleased]
 
+1.2.0 - 2018-01-03
+
 ### Added 
 - Add this changelog
 - Add ConEmu config (Windows)
