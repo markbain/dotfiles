@@ -92,6 +92,10 @@ alias ssh_watershed='ssh watershedfarmer@watershedretreat.com'
 ### iPassIELTS
 alias ssh_ipass='ssh ipassiel@eep2-05.nexcess.net'
 
+# makemusic.ai 
+alias sshmmprod='ssh c4m042156609007@c4m.09e.myftpupload.com'
+alias sshmmstag='ssh mzs442156961775@mzs.457.myftpupload.com'
+
 # Misc
 alias la='ls -al'
 alias hud='screenfetch'
