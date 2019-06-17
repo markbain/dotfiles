@@ -33,13 +33,14 @@
 		"admin",
 		"nav",
 		"typekit",
-		"hacky"
+		"hacky",
+		"Memberpress"
 	],
 	"auto_match_enabled": false,
 	"caret_extra_width": 3,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-	"font_size": 13,
+	"color_scheme": "Packages/Theme - Spacegray/base16-mocha.dark.tmTheme",
+	"font_size": 10,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -48,23 +49,29 @@
 	],
 	"ignored_words":
 	[
+		"App",
 		"Callout",
 		"Diff",
+		"Learndash",
 		"Locator",
 		"callout",
 		"css",
 		"diff",
+		"dir",
+		"dirs",
 		"httpdocs",
 		"ico",
 		"jaffa",
 		"javascripts",
 		"js",
+		"makemusic",
 		"plugins",
 		"png",
+		"preheader",
 		"stylesheets",
 		"swp"
 	],
 	"spell_check": true,
 	"tab_size": 2,
-	"theme": "Spacegray Eighties.sublime-theme"
+	"theme": "Spacegray Oceanic.sublime-theme"
 }
