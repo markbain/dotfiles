@@ -1,41 +1,18 @@
-# Alias to edit this file!
-
-alias zshconf='go ~/.oh-my-zsh/custom/example.zsh'
+alias la='ls -al'
 
 # Vagrant
 alias vu='vagrant up'
+alias vr='vagrant reload'
+alias vrp='vagrant reload --provision'
 alias vh='vagrant halt'
-alias vs='vagrant ssh'
-alias vvv200-up='cd /media/mark/Data\ B/development/vvv_test_1/ && vagrant up' # start VVV v.2.0.0 VM
-alias vvv210-up='cd /media/mark/Data\ B/development/vvv/ && vagrant up' # start VVV v.2.1.0 VM
-
-alias dev_root='cd /media/mark/Data\ B/development/vvv/www/'
-alias dev_ipass='cd /media/mark/Data\ B/development/ipass_scotch/'
-
-alias dev_mhy='cd /media/mark/Data\ B/development/vvv/www/'
-
-# Open folders
-
-    alias go_downloads='go ~/Downloads > /dev/null 2>&1'
-    alias go_pictures='go ~/Pictures > /dev/null 2>&1'
-    alias go_library='go_downloads && go_pictures > /dev/null 2>&1'
-
-    ## Dropbox
-
-    ### iPass
-    alias go_drop_ipass='go /media/mark/Data\ B/development/ipass_scotch/' # Go to the shared Dropbox
-
-
-
-    ### Make Him Yours
-    alias go_drop_mhy='go /media/mark/Data\ B/development/vvv/www/' # Go to the shared Dropbox
+alias vssh='vagrant ssh'
 
 # Client projects
 
     ## Ruby Tapas
     alias ssh_ruby_prod='ssh wp_xkwiqr@67.205.16.93' # SSH to production server
     alias ssh_ruby_stag='ssh wp_jxdneh@208.113.143.141' # SSH to staging server
-
+    alias ssh_avdicodes='ssh wp_56wdp4@avdi.codes.dream.website'
     alias go_ruby='terminator -m --layout=dev && ssh_ruby'
 
     ## Foobot
@@ -62,7 +39,7 @@ alias ssh_cloudways='ssh master_czajrvfzzm@178.62.31.106' # https://platform.clo
 ### NameCheap
 alias ssh_aerialtellyco='ssh aerialtellyco@host42.registrar-servers.com -p21098' #
 alias ssh_alba='ssh alba@host42.registrar-servers.com -p21098' #
-alias ssh_avdicodes='ssh wp_56wdp4@avdi.codes.dream.website'
+
 alias ssh_annaalonso='ssh annaalonso@host42.registrar-servers.com -p21098' #
 alias ssh_beakrayenbuhl='ssh beakrayenbuhl@host42.registrar-servers.com -p21098' #
 alias ssh_dev1='ssh dev1bain@host42.registrar-servers.com -p21098' #
@@ -86,19 +63,8 @@ alias ssh_theround='ssh theround@host42.registrar-servers.com -p21098' #
 alias ssh_thomasewens='ssh thomasewens@host42.registrar-servers.com -p21098' #
 alias ssh_videotelling='ssh videotelling@host42.registrar-servers.com -p21098' #
 
-### Bryan Price
-alias ssh_watershed='ssh watershedfarmer@watershedretreat.com'
-
-### iPassIELTS
-alias ssh_ipass='ssh ipassiel@eep2-05.nexcess.net'
-
-# makemusic.ai 
-alias sshmmprod='ssh c4m042156609007@c4m.09e.myftpupload.com'
-alias sshmmstag='ssh mzs442156961775@mzs.457.myftpupload.com'
-alias ssh_juxtapus='ssh root@142.93.63.65' # juxtapus.com
-
 # Misc
-alias la='ls -al'
+
 alias hud='screenfetch'
 alias dnsflush='sudo /etc/init.d/nscd restart' # Clear the DNS cache
 alias go='gnome-open' # Open a file in another application
