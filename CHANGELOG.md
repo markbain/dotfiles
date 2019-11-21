@@ -5,6 +5,15 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ## [Unreleased][unreleased]
 
+1.3.0 - 2019-11-20
+
+### Added
+- Add subtlepatterns backgrounds for Terminator
+- Add VSCode workspace
+
+### Changed
+- Change the Terminator background paths
+
 1.2.0 - 2018-01-03
 
 ### Added 
