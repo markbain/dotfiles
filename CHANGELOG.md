@@ -9,6 +9,7 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ### Added
 - Add subtlepatterns backgrounds for Terminator
+- Add VSCode workspace
 
 ### Changed
 - Change the Terminator background paths
