@@ -5,6 +5,7 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	filemode = false
+	editor = vim
 [merge]
 	tool = meld
 [diff]
