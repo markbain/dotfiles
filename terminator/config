@@ -83,6 +83,7 @@
   [[default]]
     background_color = "#2c3e50"
     background_darkness = 0.54
+    background_image = None
     cursor_color = "#e4db2b"
     font = Meslo LG S for Powerline 8
     foreground_color = "#eeeeee"
