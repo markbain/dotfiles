@@ -8,6 +8,20 @@ alias vh='vagrant halt'
 alias vssh='vagrant ssh'
 alias vgs='vagrant global-status'
 
+# Vagrant machines
+# ed8b935
+alias vhruby='vagrant halt ed8b935'
+alias vuruby='vagrant up ed8b935'
+# 4e8e76d
+alias vhshare='vagrant halt 4e8e76d'
+alias vushare='vagrant up 4e8e76d'
+# 76d405e
+alias vhac='vagrant halt 76d405e'
+alias vuac='vagrant up 76d405e'
+# 3914ad2
+alias vhbain='vagrant halt 3914ad2'
+alias vubain='vagrant up 3914ad2'
+
 # Client projects
 
     ## Ruby Tapas

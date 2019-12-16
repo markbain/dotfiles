@@ -7,6 +7,7 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ### Added
 - Add `vagrant global-status` alias (oh-my-zsh)
+- Add machine-specific aliases to `vagrant up` & `vagrant halt`
 
 1.3.0 - 2019-11-20
 
