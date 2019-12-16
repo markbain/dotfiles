@@ -6,6 +6,7 @@ alias vr='vagrant reload'
 alias vrp='vagrant reload --provision'
 alias vh='vagrant halt'
 alias vssh='vagrant ssh'
+alias vgs='vagrant global-status'
 
 # Client projects
 
