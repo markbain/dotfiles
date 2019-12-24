@@ -25,8 +25,7 @@ alias vubain='vagrant up 3914ad2'
 # Client projects
 
     ## Ruby Tapas
-    alias ssh_ruby_prod='ssh wp_tjtd7f@107.180.234.26' # SSH to production server
-    alias ssh_ruby_stag='ssh wp_jxdneh@208.113.143.141' # SSH to staging server
+    alias ssh_ruby='ssh wp_tjtd7f@107.180.234.26' # SSH to DreamPress server
     alias ssh_avdicodes='ssh wp_56wdp4@avdi.codes.dream.website'
 
 # Misc
