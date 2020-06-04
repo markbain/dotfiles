@@ -1,6 +1,6 @@
 [user]
-	email = Bain
-	name = Mark
+	email = mark@bain.design
+	name = Mark Bain
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
