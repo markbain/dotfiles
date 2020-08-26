@@ -9,24 +9,14 @@ alias vssh='vagrant ssh'
 alias vgs='vagrant global-status'
 
 # Vagrant machines
-# ed8b935
-alias vhruby='vagrant halt ed8b935'
-alias vuruby='vagrant up ed8b935'
-# 4e8e76d
-alias vhshare='vagrant halt 4e8e76d'
-alias vushare='vagrant up 4e8e76d'
-# 76d405e
-alias vhac='vagrant halt 76d405e'
-alias vuac='vagrant up 76d405e'
-# 3914ad2
-alias vhbain='vagrant halt 3914ad2'
-alias vubain='vagrant up 3914ad2'
 
-# Client projects
+## Shared
+alias vhsh='vagrant halt 559446b'
+alias vush='vagrant up 559446b'
 
-    ## Ruby Tapas
-    alias ssh_ruby='ssh wp_tjtd7f@107.180.234.26' # SSH to DreamPress server
-    alias ssh_avdicodes='ssh wp_56wdp4@avdi.codes.dream.website'
+## Bain Design
+alias vhbd='vagrant halt 3914ad2'
+alias vubd='vagrant up 3914ad2'
 
 # Misc
 
