@@ -96,6 +96,10 @@ ln -s ~/.dotfiles/oh-my-zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
 mkdir ~/.config/terminator && ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
 echo -e "${GREEN}Terminator config symlinked\n${NC}"
 
+# Setup symlink in /home pointing at /home/bain to ensure absolute path to
+# background images works
+ln -s /home/${USER} /home/bain # Untested
+
 #--------------------------------------------------------------------#
 #
 #       VVV
