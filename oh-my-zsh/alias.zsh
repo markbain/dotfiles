@@ -1,5 +1,8 @@
 alias la='ls -al'
 
+# Projects
+alias ssh_sini_stage='ssh master_bxehdfzxje@165.232.34.84'
+
 # Vagrant
 alias vu='vagrant up'
 alias vr='vagrant reload'
