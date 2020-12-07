@@ -1,0 +1,193 @@
+---
+
+sites:
+
+  cakeandlace:
+    repo: https://markbaindesign@bitbucket.org/markbaindesign/cake-lace.git
+    skip_provisioning: false
+    hosts:
+      - cakeandlace.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  elite-hrv:
+    repo: https://markbaindesign@bitbucket.org/elitehrv/divi-child-theme.git
+    skip_provisioning: false
+    hosts:
+      - elite-hrv.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  film-english:
+    description: "Shares theme with The School For Training"
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    skip_provisioning: false
+    hosts:
+      - film-english.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  khyentsefoundation:
+    repo: https://markbaindesign@bitbucket.org/markbaindesign/khyentse_foundation_web.git
+    skip_provisioning: false
+    hosts:
+      - khyentsefoundation.test
+      - cht.khyentsefoundation.test
+      - chs.khyentsefoundation.test
+      - ptbr.khyentsefoundation.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  middlewayeducation:
+    repo: https://markbaindesign@bitbucket.org/markbaindesign/middlewayeducation.git
+    skip_provisioning: false
+    hosts: 
+      - middlewayeducation.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  make_him_yours:
+    repo: https://markbaindesign@bitbucket.org/markbaindesign/make-him-yours.git
+    skip_provisioning: false
+    hosts: 
+      - make-him-yours.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  pack-london:
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    hosts:
+      - packlondon.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  photoslurp:
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    hosts:
+      - photoslurp.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  raul-gallegos:
+    repo: https://markbaindesign@bitbucket.org/markbaindesign/raul-gallegos.git
+    skip_provisioning: false
+    hosts:
+      - raul-gallegos.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  school-for-training:
+    repo: https://markbaindesign@bitbucket.org/markbaindesign/theschoolfortraining.git
+    skip_provisioning: false
+    hosts:
+      - theschoolfortraining.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  sini:
+    repo: https://markbaindesign@bitbucket.org/markbaindesign/sini-website.git
+    skip_provisioning: false
+    hosts:
+      - sini.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  songsten-gampo-buddhist-center:
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    skip_provisioning: false
+    hosts:
+      - songtsengampo.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  ticketfairy:
+    repo: https://github.com/theticketfairy/tfword.git
+    skip_provisioning: false
+    hosts:
+      - ticket-fairy-blog.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+  theimageconference:
+    description: "Shares theme with The School For Training"
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    skip_provisioning: false
+    hosts:
+      - theimageconference.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
+
+utilities:
+  core:
+    - memcached-admin
+    - opcache-status
+    - phpmyadmin
+    - webgrind
+    - trusted-hosts
+    - tls-ca
+  ioncube:
+    - ioncube
+
+utility-sources:
+  ioncube: https://github.com/markbain/vvv-ioncube-utility
+  core: https://github.com/Varying-Vagrant-Vagrants/vvv-utilities.git
+
+vm_config:
+  memory: 3072
+  cores: 2
