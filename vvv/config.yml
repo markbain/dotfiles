@@ -53,6 +53,18 @@ sites:
         WP_DEBUG_LOG: true
         WP_DEBUG_DISPLAY: false
         WP_DISABLE_FATAL_ERROR_HANDLER: true
+  
+  khyentse-vision:
+    repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template.git
+    skip_provisioning: false
+    hosts:
+      - khyentse-vision.test
+    custom:
+      wp_config_constants:
+        WP_DEBUG: true
+        WP_DEBUG_LOG: true
+        WP_DEBUG_DISPLAY: false
+        WP_DISABLE_FATAL_ERROR_HANDLER: true
 
   middlewayeducation:
     repo: https://markbaindesign@bitbucket.org/markbaindesign/middlewayeducation.git
