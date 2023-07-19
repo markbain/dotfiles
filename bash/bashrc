@@ -115,3 +115,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+PATH=/home/bain/anaconda3/bin:/home/bain/anaconda3/condabin:/home/bain/.nvm/versions/node/v10.12.0/bin:/home/bain/bin:/usr/local/bin:/home/bain/bin:/home/bain/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bain/java

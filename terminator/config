@@ -1,7 +1,5 @@
 [global_config]
   always_split_with_profile = True
-  borderless = True
-  geometry_hinting = False
   handle_size = 0
   homogeneous_tabbar = False
   inactive_color_offset = 1.0
@@ -83,7 +81,6 @@
   [[default]]
     background_color = "#2c3e50"
     background_darkness = 0.54
-    background_image = None
     cursor_color = "#e4db2b"
     font = Meslo LG S for Powerline 8
     foreground_color = "#eeeeee"
@@ -93,16 +90,13 @@
   [[British]]
     background_color = "#192a56"
     background_darkness = 0.92
-    background_image = None
-    background_type = transparent
+    cursor_color = "#f5f6fa"
     font = Roboto Mono for Powerline 10
     foreground_color = "#f5f6fa"
     palette = "#2f3640:#c23616:#44bd32:#e1b12c:#40739e:#8c7ae6:#0097e6:#dcdde1:#353b48:#e84118:#4cd137:#fbc531:#487eb0:#9c88ff:#00a8ff:#f5f6fa"
     use_system_font = False
   [[Circle Blues]]
     audible_bell = True
-    background_image = ~/.dotfiles/terminator/backgrounds/circle-blues.png
-    background_type = image
     cursor_color = "#ffb9f7"
     font = ProFont for Powerline 12
     urgent_bell = True
@@ -112,7 +106,6 @@
     audible_bell = True
     background_color = "#25515c"
     background_darkness = 0.0
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/concrete_wall.png
     background_type = image
     cursor_color = "#ffc97f"
     cursor_shape = ibeam
@@ -122,24 +115,23 @@
     use_system_font = False
   [[Emma]]
     background_darkness = 0.65
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/dark-grey-terrazzo.png
-    background_type = image
     cursor_color = "#49dd27"
     cursor_shape = ibeam
     font = Source Code Pro for Powerline 12
     use_system_font = False
   [[Eric]]
     background_color = "#002b36"
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/dark-triangles.png
     background_type = image
     cursor_color = "#00d9fe"
     font = Source Code Pro for Powerline 10
     foreground_color = "#839496"
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
+  [[Green]]
+    background_color = "#154604"
+    cursor_color = "#aaaaaa"
   [[Hotel]]
     background_darkness = 0.62
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/hotel-wallpaper-black.png
     background_type = image
     cursor_color = "#eaf50a"
     font = Space Mono for Powerline 8
@@ -148,31 +140,31 @@
     scroll_background = False
     use_system_font = False
   [[Karen]]
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/circle-blues.png
     background_type = image
     cursor_color = "#f20505"
     font = Go Mono for Powerline 11
     use_system_font = False
   [[Mabel]]
-    background_image = None
+    cursor_color = "#aaaaaa"
     font = Liberation Mono for Powerline 11
     use_system_font = False
+  [[New Profile]]
+    cursor_color = "#aaaaaa"
+  [[New Profile 3]]
+    cursor_color = "#aaaaaa"
   [[Olivia]]
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/wild_oliva.png
     background_type = image
     font = NovaMono for Powerline 12
     foreground_color = "#e53c00"
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
   [[Pool]]
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/pool_table.png
     background_type = image
     font = Noto Mono for Powerline 12
     scroll_background = False
     use_system_font = False
   [[Robots]]
     background_darkness = 0.0
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/robots.png
     background_type = image
     font = Roboto Mono Medium for Powerline Medium 11
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
@@ -181,7 +173,6 @@
   [[Spaceman]]
     background_color = "#300a24"
     background_darkness = 0.78
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/spaceman.png
     background_type = image
     font = Ubuntu Mono derivative Powerline 12
     foreground_color = "#ffffff"
@@ -189,7 +180,6 @@
     use_system_font = False
   [[Woods]]
     background_darkness = 0.0
-    background_image = /home/bain/.dotfiles/terminator/backgrounds/dark_wood.png
     background_type = image
     cursor_color = "#47c589"
     font = ProFont for Powerline 14

@@ -1,7 +1,10 @@
 alias la='ls -al'
 
 # Projects
-alias ssh_sini_stage='ssh master_bxehdfzxje@165.232.34.84'
+alias ssh_kf21_staging='ssh kf21prod@kf21prod.ssh.wpengine.net'
+
+## Middle Way Education
+alias ssh_mwe_prod='ssh middlewayedu@middlewayedu.ssh.wpengine.net'
 
 # Vagrant
 alias vu='vagrant up'
@@ -10,16 +13,6 @@ alias vrp='vagrant reload --provision'
 alias vh='vagrant halt'
 alias vssh='vagrant ssh'
 alias vgs='vagrant global-status'
-
-# Vagrant machines
-
-## Shared
-alias vhsh='vagrant halt 559446b'
-alias vush='vagrant up 559446b'
-
-## Bain Design
-alias vhbd='vagrant halt 3914ad2'
-alias vubd='vagrant up 3914ad2'
 
 # Misc
 
