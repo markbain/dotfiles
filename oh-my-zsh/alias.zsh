@@ -1,18 +1,24 @@
 alias la='ls -al'
 
+# Bioinformatico
+alias ssh_bic='ssh bioinformatico.com@ssh.gb.stackcp.com'
+alias ssh_bic_prd='ssh -t bioinformatico.com@ssh.gb.stackcp.com "cd public_html ; bash --login"'
+alias ssh_bic_stg='ssh -t bioinformatico.com@ssh.gb.stackcp.com "cd staging_html ; bash --login"'
+
 # KF - Environments
 alias ssh_kf_prd='ssh -t khyentsefndt@khyentsefndt.ssh.wpengine.net "cd /sites/khyentsefndt ; bash --login"'
 
 ## Middle Way Education
 alias ssh_mwe_prod='ssh -t middlewayedu@middlewayedu.ssh.wpengine.net "cd /sites/middlewayedu ; bash --login"'
 alias ssh_mwe_dev='ssh -t middlewaydev@middlewaydev.ssh.wpengine.net "cd /sites/middlewaydev ; bash --login"'
-alias ssh_mwe_staging='ssh -t middlewayedstg@middlewayedstg.ssh.wpengine.net "cd /sites/middlewayedstg ; bash --login"'
+alias ssh_mwe_staging='ssh -t mwestaging@mwestaging.ssh.wpengine.net "cd /sites/mwestaging ; bash --login"'
 
 ## CABP
-alias ssh_cabp_sg='ssh -t u1598-5nhubybv4mlo@ssh.patricias58.sg-host.com -p 18765 "cd /home/customer/www/cabpexpo.com/public_html ; bash --login"'
+alias ssh_cabp_sg='ssh -t u1598-5nhubybv4mlo@gvam1277.siteground.biz -p 18765 "cd /home/u1598-5nhubybv4mlo/www/cabpexpo.com/public_html ; bash --login"'
 alias ssh_cabp_lw='ssh -t cabpexpo@173.199.174.238 "cd /home/cabpexpo/www ; bash --login"'
 
 ## SINI
+alias ssh_sini_prod='ssh -t sini@sini.ssh.wpengine.net "cd /home/wpe-user/sites/sini ; bash --login"'
 alias ssh_sini_staging='ssh -t sini2024@sini2024.ssh.wpengine.net "cd /home/wpe-user/sites/sini2024 ; bash --login"'
 
 # Vagrant
@@ -22,6 +28,9 @@ alias vrp='vagrant reload --provision'
 alias vh='vagrant halt'
 alias vssh='vagrant ssh'
 alias vgs='vagrant global-status'
+alias vxd_on='vagrant ssh -c "switch_php_debugmod xdebug"'
+alias vxd_off='vagrant ssh -c "switch_php_debugmod none"'
+
 
 # Misc
 
