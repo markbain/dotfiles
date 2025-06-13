@@ -1,6 +1,7 @@
 [user]
-	email = mark@bain.design
-	name = Mark Bain
+	email = markbaindesign@gmail.com
+	name = Mark Bain Design
+	signingKey = ""
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
@@ -11,3 +12,13 @@
 [diff]
 [mergetool]
 	keepBackup = false
+[gpg]
+	format = openpgp
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[gpg "ssh"]
+	program = ssh-keygen
+	allowedSignersFile = ""
