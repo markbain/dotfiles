@@ -7,6 +7,7 @@ alias ssh_bic_stg='ssh -t bioinformatico.com@ssh.gb.stackcp.com "cd staging_html
 
 # KF - Environments
 alias ssh_kf_prd='ssh -t khyentsefndt@khyentsefndt.ssh.wpengine.net "cd /sites/khyentsefndt ; bash --login"'
+alias ssh_kf_stg='ssh -t khyentsefo3stg@khyentsefo3stg.ssh.wpengine.net "cd /sites/khyentsefo3stg ; bash --login"'
 
 ## Middle Way Education
 alias ssh_mwe_prod='ssh -t middlewayedu@middlewayedu.ssh.wpengine.net "cd /sites/middlewayedu ; bash --login"'
@@ -14,12 +15,15 @@ alias ssh_mwe_dev='ssh -t middlewaydev@middlewaydev.ssh.wpengine.net "cd /sites/
 alias ssh_mwe_staging='ssh -t mwestaging@mwestaging.ssh.wpengine.net "cd /sites/mwestaging ; bash --login"'
 
 ## CABP
-alias ssh_cabp_sg='ssh -t u1598-5nhubybv4mlo@gvam1277.siteground.biz -p 18765 "cd /home/u1598-5nhubybv4mlo/www/cabpexpo.com/public_html ; bash --login"'
-alias ssh_cabp_lw='ssh -t cabpexpo@173.199.174.238 "cd /home/cabpexpo/www ; bash --login"'
+alias ssh_cabp_prd='ssh -t u1598-5nhubybv4mlo@gvam1277.siteground.biz -p 18765 "cd /home/u1598-5nhubybv4mlo/www/cabpexpo.com/public_html ; bash --login"'
 
 ## SINI
 alias ssh_sini_prod='ssh -t sini@sini.ssh.wpengine.net "cd /home/wpe-user/sites/sini ; bash --login"'
 alias ssh_sini_staging='ssh -t sini2024@sini2024.ssh.wpengine.net "cd /home/wpe-user/sites/sini2024 ; bash --login"'
+
+## Film English
+alias ssh_fe_prd='ssh -t filmenglish@filmenglish.ssh.wpengine.net "cd /sites/filmenglish ; bash --login"'
+alias ssh_fe_stg='ssh -t filmenglis1stg@filmenglis1stg.ssh.wpengine.net "cd /sites/filmenglis1stg ; bash --login"'
 
 # Vagrant
 alias vu='vagrant up'
