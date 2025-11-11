@@ -1,6 +1,6 @@
 [user]
-	email = markbaindesign@gmail.com
-	name = Mark Bain Design
+	email = mark@bain.design
+	name = Bain Design
 	signingKey = ""
 [core]
 	excludesfile = ~/.gitignore_global
