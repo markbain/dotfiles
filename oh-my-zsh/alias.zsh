@@ -1,4 +1,13 @@
 alias la='ls -al'
+alias goclients='cd ~/code/vvv/clients/www && ls -al'
+alias gobain='cd ~/code/vvv/bain/www && ls -al'
+
+# The Nature Of Real Estate
+alias ssh_tnore_prd='ssh -t -p 65002 u597309227@82.29.158.75 "cd /home/u597309227/domains/thenatureofrealestate.com/public_html ; bash --login"'
+
+# Alex Wright
+alias ssh_aw_prd='ssh -t awright249@pdx1-shared-a4-07.dreamhost.com "cd /home/awright249/alexwright.com/docs && pwd && ls -al ; bash --login"'
+alias ssh_aw_stg='ssh -t awright249@pdx1-shared-a4-07.dreamhost.com "cd /home/awright249/staging.alexwright.com/docs && pwd && ls -al ; bash --login"'
 
 # Bioinformatico
 alias ssh_bic='ssh bioinformatico.com@ssh.gb.stackcp.com'
