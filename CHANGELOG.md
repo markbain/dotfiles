@@ -5,6 +5,10 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ## [Unreleased][unreleased]
 
+1.4.0 - 2025-12-19
+
+Multiple updates to various configurations and scripts.
+
 1.3.0 - 2019-11-20
 
 ### Added
