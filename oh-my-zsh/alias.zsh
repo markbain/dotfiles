@@ -9,6 +9,10 @@ alias ssh_tnore_prd='ssh -t -p 65002 u597309227@82.29.158.75 "cd /home/u59730922
 alias ssh_aw_prd='ssh -t awright249@pdx1-shared-a4-07.dreamhost.com "cd /home/awright249/alexwright.com/docs && pwd && ls -al ; bash --login"'
 alias ssh_aw_stg='ssh -t awright249@pdx1-shared-a4-07.dreamhost.com "cd /home/awright249/staging.alexwright.com/docs && pwd && ls -al ; bash --login"'
 
+# Beato Properties
+alias ssh_bp_prd='ssh -t master_npktayzuds@164.90.218.59 "cd /home/master/applications/qwpadhybuj/public_html && pwd && ls -al; bash --login"'
+alias ssh_bp_stg='ssh -t master_npktayzuds@164.90.218.59 "cd /home/master/applications/vcywemwpuh/public_html && pwd && ls -al; bash --login"'
+
 # Bioinformatico
 alias ssh_bic='ssh bioinformatico.com@ssh.gb.stackcp.com'
 alias ssh_bic_prd='ssh -t bioinformatico.com@ssh.gb.stackcp.com "cd public_html ; bash --login"'
