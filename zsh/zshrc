@@ -15,6 +15,18 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
+# Toggle between full agnoster prompt and a short prompt
+toggle_prompt() {
+  if [[ "$ZSH_THEME" == "agnoster" ]]; then
+    ZSH_THEME="minimal"
+    source $ZSH/oh-my-zsh.sh
+  else
+    ZSH_THEME="agnoster"
+    source $ZSH/oh-my-zsh.sh
+  fi
+}
+alias tp='toggle_prompt'
+
 # NVM Bash Completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -35,3 +47,4 @@ unset __conda_setup
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
