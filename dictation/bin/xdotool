@@ -1,0 +1,9 @@
+#!/bin/bash
+# Wrapper: intercept "type" calls and target the saved window
+if [ "$1" = "type" ]; then
+    WID=$(cat /tmp/nerd-ptt-window 2>/dev/null)
+    if [ -n "$WID" ]; then
+        exec /usr/bin/xdotool type --clearmodifiers --window "$WID" "${@:2}"
+    fi
+fi
+exec /usr/bin/xdotool "$@"

@@ -112,7 +112,23 @@ echo -e "${GREEN}VVV 2.1.0 vvv-custom.yml symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
 #
+#       Dictation (nerd-dictation push-to-talk)
+
+mkdir -p "$HOME/bin"
+ln -sf "$DOTFILES_DIR/dictation/nerd-ptt.sh" "$HOME/nerd-ptt.sh"
+ln -sf "$DOTFILES_DIR/dictation/nerd-dictation-start.sh" "$HOME/nerd-dictation-start.sh"
+ln -sf "$DOTFILES_DIR/dictation/xbindkeys-start.sh" "$HOME/xbindkeys-start.sh"
+ln -sf "$DOTFILES_DIR/dictation/bin/xdotool" "$HOME/bin/xdotool"
+ln -sf "$DOTFILES_DIR/dictation/xbindkeysrc" "$HOME/.xbindkeysrc"
+mkdir -p "$HOME/.config/autostart"
+ln -sf "$DOTFILES_DIR/dictation/autostart/xbindkeys.desktop" "$HOME/.config/autostart/xbindkeys.desktop"
+ln -sf "$DOTFILES_DIR/dictation/autostart/nerd-dictation.desktop" "$HOME/.config/autostart/nerd-dictation.desktop"
+chmod +x "$DOTFILES_DIR/dictation/nerd-ptt.sh" "$DOTFILES_DIR/dictation/nerd-dictation-start.sh" "$DOTFILES_DIR/dictation/xbindkeys-start.sh" "$DOTFILES_DIR/dictation/bin/xdotool"
+echo -e "${GREEN}Dictation config symlinked\n${NC}"
+
+#--------------------------------------------------------------------#
+#
 # Make a noise!
 
-echo -en "\007" 
+echo -en "\007"
 echo -e "${GREEN}Symlinking done!\n${NC}"
