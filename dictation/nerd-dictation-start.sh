@@ -7,6 +7,5 @@ if [ -z "$XAUTHORITY" ]; then
     export XAUTHORITY=$(find /run/user/$(id -u) -name 'Xauthority' 2>/dev/null | head -1)
 fi
 export PATH=/home/bain/bin:$PATH
-exec >> /tmp/nerd-ptt.log 2>&1
-echo "=== $(date) STARTUP display=$DISPLAY ==="
-nerd-dictation begin --output SIMULATE_INPUT --suspend-on-start --continuous
+echo "=== $(date) STARTUP display=$DISPLAY ===" >> /tmp/nerd-ptt.log 2>&1
+# nerd-ptt.sh now spawns nerd-dictation on demand — nothing to pre-launch

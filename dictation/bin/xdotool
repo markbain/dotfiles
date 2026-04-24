@@ -3,7 +3,9 @@
 if [ "$1" = "type" ]; then
     WID=$(cat /tmp/nerd-ptt-window 2>/dev/null)
     if [ -n "$WID" ]; then
-        exec /usr/bin/xdotool type --clearmodifiers --window "$WID" "${@:2}"
+        /usr/bin/xdotool windowfocus --sync "$WID"
+        /usr/bin/xdotool type --clearmodifiers "${@:2}"
+        exit $?
     fi
 fi
 exec /usr/bin/xdotool "$@"
