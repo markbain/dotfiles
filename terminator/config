@@ -130,6 +130,180 @@
     scroll_background = False
     use_system_font = False
 [layouts]
+  [[studio]]
+    [[[window0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      type = Window
+    [[[notebook0]]]
+      active_page = 0
+      labels = mhairi_mcf, upwork-proposals, nore, bain.design, buddhist-film-foundation, premium_domains, kf-21, bain-studio
+      order = 0
+      parent = window0
+      type = Notebook
+    [[[pane0]]]
+      order = 0
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft0]]]
+      command = bash -c 'cd /home/bain/code/misc/js/astrojs/client/mhairi_mcf && claude'
+      order = 0
+      parent = pane0
+      profile = Robots
+      type = Terminal
+      uuid = 54898bf4-611c-4275-927d-f5ff341f02ca
+    [[[termright0]]]
+      command = bash -c 'cd /home/bain/code/misc/js/astrojs/client/mhairi_mcf && exec bash'
+      order = 1
+      parent = pane0
+      profile = Spaceman
+      type = Terminal
+      uuid = bee7d5a5-d1c9-471f-8f39-b25a8a8f2a37
+    [[[pane1]]]
+      order = 1
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft1]]]
+      command = bash -c 'cd /media/data/dev/misc/upwork-proposals && claude'
+      order = 0
+      parent = pane1
+      profile = British
+      type = Terminal
+      uuid = cbd786e4-88b7-401f-b0aa-9aeb4eb4d42a
+    [[[termright1]]]
+      command = bash -c 'cd /media/data/dev/misc/upwork-proposals && exec bash'
+      order = 1
+      parent = pane1
+      profile = Hotel
+      type = Terminal
+      uuid = 7f22a3f8-73ef-4c3a-9dff-371edd0488ac
+    [[[pane2]]]
+      order = 2
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft2]]]
+      command = bash -c 'cd /home/bain/code/vvv/clients/www/nore && claude'
+      order = 0
+      parent = pane2
+      profile = Woods
+      type = Terminal
+      uuid = 47eed7cf-7d94-4c3b-bb0c-cc51878e983e
+    [[[termright2]]]
+      command = bash -c 'cd /home/bain/code/vvv/clients/www/nore && exec bash'
+      order = 1
+      parent = pane2
+      profile = Concrete
+      type = Terminal
+      uuid = 43258b10-042c-4414-b493-43fa0bddd894
+    [[[pane3]]]
+      order = 3
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft3]]]
+      command = bash -c 'cd /media/data/dev/bain/www/bain.design && claude'
+      order = 0
+      parent = pane3
+      profile = Karen
+      type = Terminal
+      uuid = dacd6f8f-3fa5-480f-b708-0fccc854c537
+    [[[termright3]]]
+      command = bash -c 'cd /media/data/dev/bain/www/bain.design && exec bash'
+      order = 1
+      parent = pane3
+      profile = Mabel
+      type = Terminal
+      uuid = 6bd64988-796f-4c83-9416-29a884db6b5a
+    [[[pane4]]]
+      order = 4
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft4]]]
+      command = bash -c 'cd /media/data/dev/vvv/clients/www/buddhist-film-foundation && claude'
+      order = 0
+      parent = pane4
+      profile = Eric
+      type = Terminal
+      uuid = bab4f050-b7f2-467f-b1a5-9fa92f9ca79a
+    [[[termright4]]]
+      command = bash -c 'cd /media/data/dev/vvv/clients/www/buddhist-film-foundation && exec bash'
+      order = 1
+      parent = pane4
+      profile = Circle Blues
+      type = Terminal
+      uuid = 2eb375a6-7748-4e8a-8870-875a74a0cd53
+    [[[pane5]]]
+      order = 5
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft5]]]
+      command = bash -c 'cd /media/data/dev/misc/premium_domains && claude'
+      order = 0
+      parent = pane5
+      profile = Robots
+      type = Terminal
+      uuid = 9c2bb819-c95c-40ca-8eef-41d5feb78148
+    [[[termright5]]]
+      command = bash -c 'cd /media/data/dev/misc/premium_domains && exec bash'
+      order = 1
+      parent = pane5
+      profile = Spaceman
+      type = Terminal
+      uuid = 0745a358-108e-4566-b975-22591e4cdef6
+    [[[pane6]]]
+      order = 6
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft6]]]
+      command = bash -c 'cd /media/data/dev/vvv/clients/www/kf-21 && claude'
+      order = 0
+      parent = pane6
+      profile = British
+      type = Terminal
+      uuid = 30fc2a6c-39ad-4043-a879-04c201893205
+    [[[termright6]]]
+      command = bash -c 'cd /media/data/dev/vvv/clients/www/kf-21 && exec bash'
+      order = 1
+      parent = pane6
+      profile = Hotel
+      type = Terminal
+      uuid = 191f82fc-654b-404d-8e29-65d4b7876a13
+    [[[pane7]]]
+      order = 7
+      parent = notebook0
+      position = 930
+      ratio = 0.5
+      type = HPaned
+    [[[termleft7]]]
+      command = bash -c 'cd /media/data/dev/bain-studio && claude'
+      order = 0
+      parent = pane7
+      profile = Woods
+      type = Terminal
+      uuid = 58781a8d-1ae6-42a8-8cea-d229b99d8868
+    [[[termright7]]]
+      command = bash -c 'cd /media/data/dev/bain-studio && exec bash'
+      order = 1
+      parent = pane7
+      profile = Concrete
+      type = Terminal
+      uuid = dd7709a6-8f6b-4047-b4c1-34bb86f60b31
   [[default]]
     [[[child0]]]
       fullscreen = False

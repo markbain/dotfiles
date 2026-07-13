@@ -48,3 +48,56 @@ unset __conda_setup
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.fzf/bin:$PATH"
+
+# zoxide — frecency-based cd
+eval "$(zoxide init zsh)"
+
+# proj — fuzzy jump to a project
+proj() {
+  local target=$(find -L ~/code ~/dropbox -maxdepth 10 -mindepth 1 \
+    \( -name "node_modules" -o -name ".git" -o -name "vendor" -o -name "__pycache__" \
+       -o -name "dist" -o -name "build" -o -name ".cache" -o -name ".claude" \
+       -o -name ".vscode" -o -name ".idea" -o -name "*.xcassets" \) -prune \
+    -o -type d -print 2>/dev/null | fzf --prompt="Project: ")
+  [[ -n "$target" ]] && cd "$target"
+}
+[ -f "$HOME/.dotfiles/secrets/env" ] && source "$HOME/.dotfiles/secrets/env"
+
+# ── Studio project recap prompt ──────────────────────────────────────────────
+# When cd-ing into a registered project directory, prompt for a recap.
+_studio_projects_json="/media/data/dev/bain-studio/studio/projects.json"
+
+function _studio_recap_prompt() {
+  [[ -f "$_studio_projects_json" ]] || return
+  local paths
+  paths=$(python3 -c "
+import json
+data = json.load(open('$_studio_projects_json'))
+for p in data:
+    print(p['path'])
+" 2>/dev/null)
+  echo "$paths" | grep -qxF "$PWD" || return
+  # Only prompt in interactive shells, not in subshells
+  [[ -o interactive ]] || return
+  echo -n "[studio] Want a recap? [y/N] "
+  read -r -k 1 _recap_answer
+  echo
+  if [[ "$_recap_answer" =~ ^[Yy]$ ]]; then
+    claude /recap
+  fi
+}
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd _studio_recap_prompt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Bitbucket
+export BITBUCKET_USER="markbaindesign"
+export BITBUCKET_APP_PASSWORD=""  # fill in: bitbucket.org/account/settings/app-passwords
+
+# Studio scripts
+alias create-repo='/media/data/dev/bain-studio/studio/scripts/create-repo'
+alias interview-me='python3 ~/bin/interview_me.py'
+# setup-wp: WP project scaffold
+alias setup-wp='bash ~/bin/setup-wp'
