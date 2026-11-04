@@ -61,6 +61,11 @@ script creates it as one. It is ahead of `oh-my-zsh/alias.zsh` here by three ali
 which holds a Cloudways SSH username and server IP. Do not sync it into this repo without
 dealing with that line first.
 
+This makes `symlinks` unsafe to re-run on **this** machine as things stand: it would move
+that live file into `~/.dotfiles_backup` and link the repo copy in its place, so the three
+extra aliases would stop working until restored. Every other link it makes is already
+correct and would be left alone.
+
 ## Fresh machine
 
 `setup` installs packages; `symlinks` creates the links. Neither currently wires the Claude

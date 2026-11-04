@@ -11,33 +11,63 @@ GREEN='\033[0;32m'
 LIGHTBLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.dotfiles}"
 DOTFILES_BACKUP_DIR="$HOME/.dotfiles_backup"
 
 #--------------------------------------------------------------------#
 #
 #       Set up backup location
 
-mkdir $DOTFILES_BACKUP_DIR $DOTFILES_BACKUP_DIR/bash $DOTFILES_BACKUP_DIR/git $DOTFILES_BACKUP_DIR/oh-my-zsh $DOTFILES_BACKUP_DIR/ssh $DOTFILES_BACKUP_DIR/sublime $DOTFILES_BACKUP_DIR/terminator $DOTFILES_BACKUP_DIR/wp-cli $DOTFILES_BACKUP_DIR/zsh
-echo -e "${GREEN}Backup dir created.\n${NC}"
+mkdir -p "$DOTFILES_BACKUP_DIR"
+echo -e "${GREEN}Backup dir ready.\n${NC}"
+
+#--------------------------------------------------------------------#
+#
+#       link SOURCE TARGET
+#
+#       Safe to re-run. Leaves a correct link alone, replaces a wrong
+#       one, and moves anything real out to the backup dir first.
+
+link() {
+	local src="$1" dest="$2"
+
+	if [[ ! -e "$src" ]]
+	then
+		echo -e "${RED}missing in repo, skipped: $src${NC}"
+		return 1
+	fi
+
+	if [[ -L "$dest" ]]
+	then
+		if [[ "$(readlink "$dest")" == "$src" ]]
+		then
+			echo -e "${LIGHTBLUE}already linked: $dest${NC}"
+			return 0
+		fi
+		rm "$dest"
+	elif [[ -e "$dest" ]]
+	then
+		mv "$dest" "$DOTFILES_BACKUP_DIR/$(basename "$dest").$(date +%F-%H%M%S)"
+		echo -e "${LIGHTBLUE}existing file moved to $DOTFILES_BACKUP_DIR: $dest${NC}"
+	fi
+
+	mkdir -p "$(dirname "$dest")"
+	ln -s "$src" "$dest"
+}
 
 #--------------------------------------------------------------------#
 #
 #       Bash
 
-if [[ -f "$HOME/.bashrc" ]]
-then
-	mv $HOME/.bashrc $DOTFILES_BACKUP_DIR/bash/.bashrc
-fi
-ln -s $DOTFILES_DIR/bash/bashrc ~/.bashrc
+link "$DOTFILES_DIR/bash/bashrc" "$HOME/.bashrc"
 echo -e "${GREEN}Bash config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
 #
 #       Git
 
-ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+link "$DOTFILES_DIR/git/gitconfig" "$HOME/.gitconfig"
+link "$DOTFILES_DIR/git/gitignore_global" "$HOME/.gitignore_global"
 echo -e "${GREEN}Git config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
@@ -52,39 +82,87 @@ echo -e "${GREEN}Git config symlinked\n${NC}"
 #
 #       ZSH
 
-if [[ -f "$HOME/.zshrc" ]]
-then
-	mv $HOME/.zshrc $DOTFILES_BACKUP_DIR/zsh/.zshrc
-fi
-	ln -s $DOTFILES_DIR/zsh/zshrc $HOME/.zshrc
+link "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
 echo -e "${GREEN}ZSH config symlinked\n${NC}"
 
 #--------------------------------------------------------------------#
 #
 #       Oh My ZSH
 
-ln -s ~/.dotfiles/oh-my-zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
+link "$DOTFILES_DIR/oh-my-zsh/alias.zsh" "$HOME/.oh-my-zsh/custom/alias.zsh"
+echo -e "${GREEN}Oh My ZSH aliases symlinked\n${NC}"
+
+#--------------------------------------------------------------------#
+#
+#       Claude Code
+#
+#       Both config dirs share one rules directory, so a rule file is
+#       written once and loads on both accounts.
+
+link "$DOTFILES_DIR/claude/rules" "$HOME/.claude/rules"
+link "$DOTFILES_DIR/claude/rules" "$HOME/.claude-kf/rules"
+echo -e "${GREEN}Claude Code rules symlinked\n${NC}"
+
+#--------------------------------------------------------------------#
+#
+#       Shell secrets
+#
+#       Values live outside this repo, which is public. The template is
+#       commented out so sourcing an unfilled file is a no-op.
+
+SECRETS_FILE="$HOME/.config/secrets/env"
+if [[ -e "$SECRETS_FILE" ]]
+then
+	echo -e "${LIGHTBLUE}secrets file already present: $SECRETS_FILE${NC}"
+else
+	mkdir -p "$(dirname "$SECRETS_FILE")"
+	cat > "$SECRETS_FILE" <<-'TEMPLATE'
+	# Sourced by ~/.bashrc and ~/.zshrc. Mode 600. Never commit this file,
+	# and never move it inside ~/.dotfiles - that repo is public.
+	#
+	# Regenerate each value on a new machine rather than restoring it from
+	# backup. See RECOVERY.md, "Shell secrets".
+
+	# export OPENAI_API_KEY=""
+	# export DEEPL_API_KEY=""
+	# export BITBUCKET_USER=""
+	# export BITBUCKET_APP_PASSWORD=""
+	TEMPLATE
+	chmod 600 "$SECRETS_FILE"
+	echo -e "${GREEN}Secrets template written to $SECRETS_FILE - fill it in${NC}\n"
+fi
 
 #--------------------------------------------------------------------#
 #
 #       Terminator
 
-mkdir ~/.config/terminator && ln -s ~/.dotfiles/terminator/config ~/.config/terminator/config
+link "$DOTFILES_DIR/terminator/config" "$HOME/.config/terminator/config"
 echo -e "${GREEN}Terminator config symlinked\n${NC}"
 
-# Setup symlink in /home pointing at /home/bain to ensure absolute path to
-# background images works
-ln -s /home/${USER} /home/bain # Untested
+# The terminator background images are referenced by absolute path under
+# /home/bain, so a machine with a different username needs that path to
+# exist. Writes outside $HOME and needs root, so it is only attempted
+# when genuinely absent.
+if [[ ! -e /home/bain ]]
+then
+	echo -e "${RED}/home/bain does not exist - terminator background paths need it:${NC}"
+	echo -e "${RED}  sudo ln -s /home/${USER} /home/bain${NC}\n"
+fi
 
 #--------------------------------------------------------------------#
 #
 #       VVV
 
-ln -s ~/.dotfiles/vvv/2.0.0/vvv-custom.yml ~/Development/vvv/2.0.0/vvv-custom.yml
-echo -e "${GREEN}VVV 2.0.0 vvv-custom.yml symlinked\n${NC}"
-
-ln -s ~/.dotfiles/vvv/2.1.0/vvv-custom.yml ~/Development/vvv/2.1.0/vvv-custom.yml
-echo -e "${GREEN}VVV 2.1.0 vvv-custom.yml symlinked\n${NC}"
+# Legacy: VVV now lives under /media/data/dev/vvv on this machine, so
+# these only apply where the old ~/Development tree is present.
+for v in 2.0.0 2.1.0
+do
+	if [[ -d "$HOME/Development/vvv/$v" ]]
+	then
+		link "$DOTFILES_DIR/vvv/$v/vvv-custom.yml" "$HOME/Development/vvv/$v/vvv-custom.yml"
+		echo -e "${GREEN}VVV $v vvv-custom.yml symlinked\n${NC}"
+	fi
+done
 
 #--------------------------------------------------------------------#
 #
