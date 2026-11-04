@@ -61,3 +61,9 @@ alias ghow='git show --stat --pretty=format:"%C(yellow)%h%C(reset) %G? %C(bold b
 '
 alias gl='git log --graph --pretty=format:"%C(yellow)%h%C(reset) %G? %C(bold blue)%an%C(reset) %s%C(bold cyan)%d%C(reset) %C(green)%cr.%C(reset)"
 '
+
+# Studio task creation
+alias studio-task='python3 /media/data/dev/bain-studio/studio/sync.py --create-task --project'
+
+# Studio Slack notification
+alias studio-notify='python3 /media/data/dev/bain-studio/studio/notifier.py'
