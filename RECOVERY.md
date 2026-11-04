@@ -24,6 +24,8 @@
 
 [Bitbucket / GitHub](#bitbucket-github)
 
+[Shell secrets](#shell-secrets)
+
 [Essential tools](#essential-tools)
 
 [When the worst happens](#when-the-worst-happens)
@@ -128,8 +130,17 @@ UPDATE: The intention is to **virtualize all development**, and to ensure all pr
 
 #### **Bitbucket / GitHub** {#bitbucket-github}
 
-* Bitbucket app password — regenerate at bitbucket.org/account/settings/app-passwords, store in `~/.dotfiles/secrets/env` (not committed)  
+* Bitbucket app password — regenerate at bitbucket.org/account/settings/app-passwords, store in `~/.config/secrets/env` (see [Shell secrets](#shell-secrets) below)  
 * SSH keys for GitHub/Bitbucket covered under [SSH](#ssh) above
+
+#### **Shell secrets** {#shell-secrets}
+
+* `~/.config/secrets/env` — sourced by both `~/.bashrc` and `~/.zshrc`, mode 600. It sits **outside** `~/.dotfiles` on purpose: that repo is public, so a secret inside it is one `.gitignore` mistake away from being published.
+* **Regenerate, do not restore** — same rule as the Claude credentials above. The file holds live API keys, so a copy in a backup is a copy to lose track of. Expected contents, by variable name:
+  * `OPENAI_API_KEY` — platform.openai.com, used by the studio voice and interview tools
+  * `DEEPL_API_KEY` — deepl.com account page, free tier (`:fx` suffix)
+  * `BITBUCKET_USER` and `BITBUCKET_APP_PASSWORD` — not currently set; add them here when the app password is regenerated, per [Bitbucket / GitHub](#bitbucket-github) above
+* Until the file exists, both shells start without error and simply have no keys, so a missing API key on a fresh machine is the expected symptom, not a broken install.
 
 ## **Essential tools** {#essential-tools}
 
