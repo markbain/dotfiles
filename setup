@@ -35,7 +35,6 @@ echo -e "${GREEN}Grunt install task completed.\n${NC}"
 
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo add-apt-repository ppa:jeffreyratcliffe/ppa -y
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y # Sublime Text 3
 sudo add-apt-repository ppa:gnome-terminator -y # Terminator
 echo -e "${GREEN}Add repos task completed.\n${NC}"
 
@@ -58,10 +57,24 @@ echo -e "${GREEN}Apt-get update task completed.\n${NC}"
 #
 # Automatic install
 
-sudo apt install -y chromium-browser compiz compizconfig-settings-manager compiz-plugins curl digikam git git-flow filezilla ghostscript meld gimp gpick gscan2pdf htop inkscape imagemagick nautilus-dropbox shutter  sublime-text-installer terminator unrar vagrant vim vokoscreen zsh
+sudo apt install -y chromium-browser compiz compizconfig-settings-manager compiz-plugins curl digikam git git-flow filezilla ghostscript meld gimp gpick gscan2pdf htop inkscape imagemagick nautilus-dropbox shutter terminator unrar vagrant vim vokoscreen zsh
 
 # sudo apt install -y spotify-client
 echo -e "${GREEN}Apt install tasks completed.\n${NC}"
+
+#--------------------------------------------------------------------#
+#
+# Install VS Code
+
+if ! command -v code >/dev/null 2>&1; then
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/packages.microsoft.gpg
+    sudo install -D -o root -g root -m 644 /tmp/packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+    echo "deb [arch=amd64,signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+    rm -f /tmp/packages.microsoft.gpg
+    sudo apt-get update
+    sudo apt install -y code
+fi
+echo -e "${GREEN}VS Code install task completed.\n${NC}"
 
 #--------------------------------------------------------------------#
 #
@@ -119,6 +132,26 @@ echo -e "${GREEN}Virtualbox install task completed.\n${NC}"
 #--------------------------------------------------------------------#
 
 sudo update-alternatives --all
+
+#--------------------------------------------------------------------#
+#
+# Dictation (nerd-dictation push-to-talk via Pause key)
+
+sudo apt install -y xbindkeys xdotool python3-pip curl
+pip3 install nerd-dictation 2>/dev/null || pip3 install git+https://github.com/ideasman42/nerd-dictation.git
+
+# Download VOSK small English model if not present
+VOSK_MODEL_DIR="$HOME/.config/nerd-dictation/model"
+if [ ! -d "$VOSK_MODEL_DIR" ]; then
+    mkdir -p "$HOME/.config/nerd-dictation"
+    curl -L https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip -o /tmp/vosk-model.zip
+    unzip /tmp/vosk-model.zip -d /tmp/
+    mv /tmp/vosk-model-small-en-us-0.15 "$VOSK_MODEL_DIR"
+    rm /tmp/vosk-model.zip
+fi
+echo -e "${GREEN}Dictation install task completed.\n${NC}"
+
+#--------------------------------------------------------------------#
 
 echo -e "The following packages must be installed manually:"
 echo -e "${RED}* Crashplan\n${NC}"

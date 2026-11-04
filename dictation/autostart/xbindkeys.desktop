@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=xbindkeys
+Exec=/home/bain/xbindkeys-start.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

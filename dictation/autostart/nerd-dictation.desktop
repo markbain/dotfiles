@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=nerd-dictation
+Exec=/home/bain/nerd-dictation-start.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

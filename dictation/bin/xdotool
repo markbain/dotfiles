@@ -1,0 +1,11 @@
+#!/bin/bash
+# Wrapper: intercept "type" calls and target the saved window
+if [ "$1" = "type" ]; then
+    WID=$(cat /tmp/nerd-ptt-window 2>/dev/null)
+    if [ -n "$WID" ]; then
+        /usr/bin/xdotool windowfocus --sync "$WID"
+        /usr/bin/xdotool type --clearmodifiers "${@:2}"
+        exit $?
+    fi
+fi
+exec /usr/bin/xdotool "$@"
