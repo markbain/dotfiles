@@ -2,3 +2,4 @@
 *.*-workspace
 *.swp
 secrets/
+.worktrees/
