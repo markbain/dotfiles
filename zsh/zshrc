@@ -62,7 +62,8 @@ proj() {
     -o -type d -print 2>/dev/null | fzf --prompt="Project: ")
   [[ -n "$target" ]] && cd "$target"
 }
-[ -f "$HOME/.dotfiles/secrets/env" ] && source "$HOME/.dotfiles/secrets/env"
+
+[ -f "$HOME/.config/secrets/env" ] && source "$HOME/.config/secrets/env"
 
 # ── Studio project recap prompt ──────────────────────────────────────────────
 # When cd-ing into a registered project directory, prompt for a recap.
@@ -92,12 +93,23 @@ autoload -U add-zsh-hook
 add-zsh-hook chpwd _studio_recap_prompt
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Bitbucket
-export BITBUCKET_USER="markbaindesign"
-export BITBUCKET_APP_PASSWORD=""  # fill in: bitbucket.org/account/settings/app-passwords
 
 # Studio scripts
-alias create-repo='/media/data/dev/bain-studio/studio/scripts/create-repo'
+alias create-repo='/media/data/dev/bain-studio/studio/scripts/repo-create'
+alias repo-create='/media/data/dev/bain-studio/studio/scripts/repo-create'
 alias interview-me='python3 ~/bin/interview_me.py'
+alias dash='python3 /media/data/dev/bain-studio/studio/dashboard/server.py'
+alias studio-looper-now='/usr/bin/python3 /media/data/dev/bain-studio/studio/scripts/looper_runner.py --now'
+studio-looper-at() { /usr/bin/python3 /media/data/dev/bain-studio/studio/scripts/looper_runner.py --at "$1" }
+# claude-sessions-status: every Claude Code session on this machine
+# (runs the released ops worktree, not the dev checkout)
+alias claude-sessions-status='/home/bain/ops/bain-studio/studio/scripts/session-status'
 # setup-wp: WP project scaffold
 alias setup-wp='bash ~/bin/setup-wp'
+# nas-reconnect: remount NAS shares + restart Plex/Navidrome/Audiobookshelf after a power cut
+alias nas-reconnect='"/media/data/Dropbox/Personal/Personal Notes/tech/Media Center/Home media server/nas-reconnect.sh"'
+
+# Resolve symlinks on cd so $PWD always reflects the physical path
+# (fixes ddev "project root already set" errors when entering via a symlink)
+setopt chase_links
+source ~/.claude/overlays/claude-kf.zsh
