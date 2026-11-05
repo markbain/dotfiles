@@ -38,5 +38,10 @@ a fix is not the review instructions for it.
 edits the existing comment in place when no human comment has landed since. A "Correction …,
 replacing my earlier note" comment is a defect.
 
+**These limits are enforced, not advisory.** `sync.py` refuses to post a note over 900
+characters, with any block over 200, or with more than 8 blocks. It logs an error naming the
+task and leaves the note in the mirror to be rewritten; the task's own state still syncs. If a
+note will not fit, the detail belongs in the commit message.
+
 Full reference, including the state file and the matching rules:
 `/media/data/dev/bain-studio/docs/utilities/asana-comments.md`
