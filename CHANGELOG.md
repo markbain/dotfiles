@@ -5,6 +5,33 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ## [Unreleased][unreleased]
 
+1.6.0 - 2026-11-05
+
+### Added
+- `claude/rules/asana-comments.md` - the format every Claude session must use when it comments
+  on an Asana task. Mark's Asana inbox is filtered to *Mentioned*, so a comment without a
+  `@mark` token never reaches him, and a plain-text comment cannot mention anyone at all.
+  The rule carries the note template, the convention that the mention is a signal rather than
+  a courtesy (review and blocked notes only, never routine status changes), and the line that
+  reasoning belongs in the commit message rather than the comment. `bain-studio`'s `sync.py`
+  enforces the limits rather than trusting the prose: a note over 900 characters, with a block
+  over 200, or with more than 8 blocks is refused and logged.
+
+### Changed
+- `word-choice` states its scope once, for all four rules, instead of repeating it per rule.
+- `oh-my-zsh/alias.zsh` caught up with the live file, which had drifted ahead of the repo copy
+  the way `bashrc` and `zshrc` had. The live file is now a symlink to this one. `ssh_bd` was
+  deliberately left out: it held a Cloudways server username and IP.
+
+### Removed
+- The 18 `ssh_*` client aliases, which named each client's host, account and web root,
+  including two bare IPs and two non-standard ports. Not credentials, since access needs the
+  key in `~/.ssh`, but a per-client inventory of where everything lives, published under
+  Mark's own name. They now live in `~/.config/secrets/ssh-aliases.zsh` at mode 600 alongside
+  the API keys, sourced by `zshrc`, and `RECOVERY.md` records the file as
+  rebuild-rather-than-restore. The alias file keeps a comment saying where they went, so the
+  next one does not get added back here.
+
 1.5.0 - 2026-11-04
 
 ### Added
