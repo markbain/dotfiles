@@ -6,8 +6,8 @@ in history.
 
 ## The working tree is live config
 
-Six paths outside this repo are symlinks **into this working tree**, so editing a file here
-changes live configuration immediately, with no deploy step:
+Seven paths outside this repo are symlinks **into this working tree**, so editing a file
+here changes live configuration immediately, with no deploy step:
 
 | Live path | This repo |
 |---|---|
@@ -17,6 +17,7 @@ changes live configuration immediately, with no deploy step:
 | `~/.config/terminator/config` | `terminator/config` |
 | `~/.claude/rules` | `claude/rules/` |
 | `~/.claude-kf/rules` | `claude/rules/` |
+| `~/.oh-my-zsh/custom/alias.zsh` | `oh-my-zsh/alias.zsh` |
 
 Both Claude config dirs share one `rules/` directory, so a rule file here loads in every
 session on both accounts.
@@ -54,17 +55,23 @@ a tracked file "temporarily".
 If the file is absent both shells still start; the symptom is a missing API key, not a
 broken install. See `RECOVERY.md` for what belongs in it.
 
-## Known drift
+## Private config, kept out of this repo
 
-`~/.oh-my-zsh/custom/alias.zsh` is a **real file, not a symlink**, though the `symlinks`
-script creates it as one. It is ahead of `oh-my-zsh/alias.zsh` here by three aliases, one of
-which holds a Cloudways SSH username and server IP. Do not sync it into this repo without
-dealing with that line first.
+Two files sit outside the repo because this one is public. Both are mode 600 and both are
+sourced by the shell:
 
-This makes `symlinks` unsafe to re-run on **this** machine as things stand: it would move
-that live file into `~/.dotfiles_backup` and link the repo copy in its place, so the three
-extra aliases would stop working until restored. Every other link it makes is already
-correct and would be left alone.
+| File | Holds |
+|---|---|
+| `~/.config/secrets/env` | API keys; sourced by `bashrc` and `zshrc` |
+| `~/.config/secrets/ssh-aliases.zsh` | the client SSH aliases; sourced by `zshrc` |
+
+Client server details are not credentials, since access still needs the key in `~/.ssh`, but
+they map each client to a host, an account and a web root. When adding an alias for a client
+server, put it in that file, never in `oh-my-zsh/alias.zsh`.
+
+**Already disclosed:** those aliases were committed and pushed for a long time before being
+moved out, so they remain in this repo's public history. Taking them out of the current
+files does not undo that.
 
 ## Fresh machine
 

@@ -141,6 +141,7 @@ UPDATE: The intention is to **virtualize all development**, and to ensure all pr
   * `DEEPL_API_KEY` — deepl.com account page, free tier (`:fx` suffix)
   * `BITBUCKET_USER` and `BITBUCKET_APP_PASSWORD` — not currently set; add them here when the app password is regenerated, per [Bitbucket / GitHub](#bitbucket-github) above
 * Until the file exists, both shells start without error and simply have no keys, so a missing API key on a fresh machine is the expected symptom, not a broken install.
+* `~/.config/secrets/ssh-aliases.zsh` — the client SSH aliases (`ssh_kf_prd`, `ssh_mwe_prod` and the rest), sourced by `~/.zshrc`, mode 600. Also outside the dotfiles repo: they are not credentials, but they map each client to a host, an account and a web root. Rebuild from each hosting control panel or the project's own `CLAUDE.md` rather than restoring them.
 
 ## **Essential tools** {#essential-tools}
 

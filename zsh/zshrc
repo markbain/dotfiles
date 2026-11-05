@@ -64,6 +64,8 @@ proj() {
 }
 
 [ -f "$HOME/.config/secrets/env" ] && source "$HOME/.config/secrets/env"
+# Client SSH aliases: kept out of the dotfiles repo, which is public
+[ -f "$HOME/.config/secrets/ssh-aliases.zsh" ] && source "$HOME/.config/secrets/ssh-aliases.zsh"
 
 # ── Studio project recap prompt ──────────────────────────────────────────────
 # When cd-ing into a registered project directory, prompt for a recap.
