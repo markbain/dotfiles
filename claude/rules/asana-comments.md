@@ -4,10 +4,26 @@ Every comment Claude posts to Asana — from any project, any skill, any session
 this. It is not a looper rule. The wall-of-text comment that prompted it came from an
 ordinary project session, not the looper.
 
-**Mark's Asana inbox is filtered to "Mentioned".** A comment that does not @-mention him
-never reaches him. A plain-text comment *cannot* mention anyone: Asana needs rich text. So
-every comment goes through `sync.py`, which converts a leading `@mark` token into a real
-mention. Never post to the Asana API directly.
+**A leading `@mark` is what makes a comment reach Mark's Asana inbox at all.** Every comment
+goes through `sync.py`; a note opening `@mark` makes it add Mark as a **collaborator** on the
+task before posting, and that is what puts the note in his inbox. A note without the token
+posts silently. Never post to the Asana API directly.
+
+**It does not produce an Asana "mention", despite the name.** `sync.py` sends the documented
+rich-text form, `<a data-asana-gid="…"/>`, and Asana annotates it `data-asana-type="user"` —
+but a comment posted through the API never lands in an inbox **filtered to "Mentioned"**, and
+Asana does not auto-add the person as it does for a mention typed in the web UI. Tested six
+ways on 2026-11-06, including three markup variants and the same comment posted from the web
+UI as the bot (which does reach the filter). So:
+
+| Posted via | "Mentioned" filter | Normal inbox | Browser notification |
+|---|---|---|---|
+| `sync.py` with `@mark` | no | **yes** | yes |
+| `sync.py` without it | no | no | no |
+
+Do not "fix" this in `sync.py`: the markup is already correct and the limitation is Asana's.
+In particular **do not remove the collaborator add or its wait** — that is the only reason a
+note arrives, and removing it delivers nothing at all. See BSTD-878.
 
 ```bash
 python3 /media/data/dev/bain-studio/studio/sync.py --comment --task-gid {GID} \
@@ -18,9 +34,11 @@ From inside a project, write the same string as the task's `**Progress:**` line 
 `asana-mirror.md` and let the scheduled sync post it. `||` separates blocks, expanded to
 newlines at post time — a Progress note must occupy exactly one mirror line.
 
-**The mention is a signal, not a courtesy.** Use `@mark` only when he must act: work ready
+**The token is a signal, not a courtesy.** Use `@mark` only when he must act: work ready
 for review, or genuinely blocked. Routine status changes post without it — on the record,
-and off his radar. Mentioning everything restores the flood the filter was built to stop.
+and off his radar. Putting it on everything restores the flood that silence is there to
+prevent, and it is the only volume control there is, since the inbox filter does not
+distinguish these notes.
 
 | Block | Holds | Limit |
 |---|---|---|
