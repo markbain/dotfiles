@@ -111,6 +111,15 @@ alias setup-wp='bash ~/bin/setup-wp'
 # nas-reconnect: remount NAS shares + restart Plex/Navidrome/Audiobookshelf after a power cut
 alias nas-reconnect='"/media/data/Dropbox/Personal/Personal Notes/tech/Media Center/Home media server/nas-reconnect.sh"'
 
+# Open a normal tabbed window on an app window's own Chrome profile.
+# The asana/slack app windows run --app=, which has no toolbar, so extensions
+# are invisible and unmanageable from them. These give you a real window on the
+# same profile (it hands off to the running process, so cookies are shared).
+# Takes an optional URL. Chrome refuses a chrome:// URL on the command line, so
+# for chrome://extensions open any window and type the address.
+alias asana-chrome='/opt/google/chrome/google-chrome --user-data-dir="$HOME/.config/chrome-asana"'
+alias slack-chrome='/opt/google/chrome/google-chrome --user-data-dir="$HOME/.config/chrome-slack"'
+
 # Resolve symlinks on cd so $PWD always reflects the physical path
 # (fixes ddev "project root already set" errors when entering via a symlink)
 setopt chase_links
