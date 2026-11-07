@@ -3,7 +3,7 @@
 Code repos are for code. **Never write a report, audit, proposal, note or draft into a project
 repo** - not at the repo root, not in a `docs/` folder. Documents belong in the project's
 Dropbox folder, which for client work is
-`/media/data/Dropbox/Work/Projects/Client/{Client}/`:
+`/media/data/Dropbox/Work/clients/{Client}/`:
 
 | Kind of document | Goes in |
 |---|---|
