@@ -11,19 +11,26 @@ posts silently. Never post to the Asana API directly.
 
 **It does not produce an Asana "mention", despite the name.** `sync.py` sends the documented
 rich-text form, `<a data-asana-gid="…"/>`, and Asana annotates it `data-asana-type="user"` —
-but a comment posted through the API never lands in an inbox **filtered to "Mentioned"**, and
-Asana does not auto-add the person as it does for a mention typed in the web UI. Tested six
-ways on 2026-11-06, including three markup variants and the same comment posted from the web
-UI as the bot (which does reach the filter). So:
+but a comment posted through the API never lands in an inbox **filtered to "Mentioned"**.
+Tested six ways on 2026-11-06, including three markup variants and the same comment posted
+from the web UI as the bot (which does reach the filter). So:
 
 | Posted via | "Mentioned" filter | Normal inbox | Browser notification |
 |---|---|---|---|
 | `sync.py` with `@mark` | no | **yes** | yes |
 | `sync.py` without it | no | no | no |
 
-Do not "fix" this in `sync.py`: the markup is already correct and the limitation is Asana's.
-In particular **do not remove the collaborator add or its wait** — that is the only reason a
-note arrives, and removing it delivers nothing at all. See BSTD-878.
+**The collaborator add is Asana's own documented procedure, not a workaround.** John_Vu, from
+Asana, in [forum thread 3326](https://forum.asana.com/t/any-way-to-create-user-mentions-using-api/3326)
+on 2024-01-05: a rich-text mention "does not automatically add the @mentioned user to the
+resource", and the prescribed step is a follow-up `addFollowersForTask` call. So **do not
+remove the collaborator add or its wait** — it is the only reason a note arrives, removing it
+delivers nothing at all, and it is what Asana tells integrations to do.
+
+Do not "fix" the rest in `sync.py` either: the markup is already correct. What remains
+unanswered by Asana is only the filter — their prescribed route delivers the note as activity
+on a followed task, which is precisely what an inbox filtered to "Mentioned" excludes. See
+BSTD-878.
 
 ```bash
 python3 /media/data/dev/bain-studio/studio/sync.py --comment --task-gid {GID} \
