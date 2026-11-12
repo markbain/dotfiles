@@ -76,11 +76,20 @@
     color: #808080;
     font-weight: normal;
     /* A serif, deliberately unlike the terminal's monospace, so a tab label
-     * reads as framing rather than as content. Charter was designed for
-     * low-resolution screens and holds up at this size where Liberation Serif
-     * and Times go spindly. The title_font key in the config styles the
-     * per-terminal titlebar, which is off, and never reached the tabs. */
-    font-family: "Bitstream Charter", serif;
+     * reads as framing rather than as content. Georgia was drawn for screens:
+     * large x-height, sturdy at small sizes, where Liberation Serif and Times
+     * New Roman go spindly.
+     *
+     * Not Bitstream Charter, which fontconfig lists but Pango cannot use: it
+     * is a Type 1 .pfb (c0648bt_.pfb) and Pango 1.44 dropped Type 1 support.
+     * This machine runs Pango 1.44.7, where "Bitstream Charter" is absent from
+     * list_families() and the text silently falls back. The same goes for the
+     * other gsfonts Type 1 families here - Century Schoolbook L, URW Bookman L.
+     * Check a family is enumerable, not merely installed, before using it.
+     *
+     * The title_font key in the config styles the per-terminal titlebar, which
+     * is off, and never reached the tabs. */
+    font-family: Georgia, serif;
     font-size: 10.5pt;
 }
 
