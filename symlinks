@@ -139,6 +139,19 @@ fi
 link "$DOTFILES_DIR/terminator/config" "$HOME/.config/terminator/config"
 echo -e "${GREEN}Terminator config symlinked\n${NC}"
 
+# Appearance Terminator's config cannot express - pane separator and tab bar
+# colours. Terminator loads this from the theme directory matching the current
+# GTK theme, so the path carries the theme name; see the file's own header.
+GTK_THEME_NAME="$(gsettings get org.gnome.desktop.interface gtk-theme 2>/dev/null | tr -d "'")"
+if [[ -n "$GTK_THEME_NAME" ]]
+then
+	link "$DOTFILES_DIR/terminator/terminator.css" \
+		"$HOME/.local/share/themes/$GTK_THEME_NAME/gtk-3.0/apps/terminator.css"
+	echo -e "${GREEN}Terminator CSS symlinked for GTK theme $GTK_THEME_NAME\n${NC}"
+else
+	echo -e "${RED}Could not read the GTK theme name - Terminator CSS not linked${NC}\n"
+fi
+
 # The terminator background images are referenced by absolute path under
 # /home/bain, so a machine with a different username needs that path to
 # exist. Writes outside $HOME and needs root, so it is only attempted

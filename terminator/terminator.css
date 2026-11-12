@@ -1,0 +1,81 @@
+/*
+ * Terminator appearance tweaks that its own config cannot express.
+ *
+ * Terminator loads this at startup from
+ *   ~/.local/share/themes/<gtk-theme>/gtk-3.0/apps/terminator.css
+ * which on this machine is the Yaru theme (terminator.py:514-524). The hook is
+ * checked before Terminator's bundled equivalents and applies to Terminator
+ * alone, so nothing here reaches any other GTK application.
+ *
+ * It exists because Terminator paints both the pane separators and the tab bar
+ * with @theme_bg_color (terminator.py:452-455), which under Yaru with
+ * prefer-dark off resolves to #f7f7f7 - a near-white line between dark panes
+ * and a near-white strip behind the tabs. There is no config key for either.
+ *
+ * Selectors are doubled up: GTK renamed these nodes in 3.20, and Terminator's
+ * own CSS hedges the same way. This machine runs GTK 3.24.20.
+ */
+
+/* --- Pane separators ----------------------------------------------------- */
+
+/* Black rather than transparent: the window background is forced to
+ * alpha(@theme_bg_color, 0), so a transparent separator shows the desktop
+ * through the gap instead of nothing. Against dark profiles a black hairline
+ * reads as no line, and the min-size collapses what is left. handle_size = 0
+ * in the config does not do this - it writes the deprecated
+ * -GtkPaned-handle-size, which 3.20+ ignores, and it governs the drag width
+ * rather than whether the node paints. */
+.terminator-terminal-window .pane-separator,
+.terminator-terminal-window paned > separator {
+    background-color: #000000;
+    background-image: none;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* --- Tab bar ------------------------------------------------------------- */
+
+.terminator-terminal-window .notebook.header,
+.terminator-terminal-window notebook header {
+    background-color: #0d0d0d;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+.terminator-terminal-window notebook tab {
+    background-color: #0d0d0d;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding: 2px 10px;
+    min-height: 0;
+}
+
+.terminator-terminal-window notebook tab label {
+    color: #808080;
+    font-weight: normal;
+    /* Same family as every profile's terminal font, a step down in size, so a
+     * tab label and the text under it are visibly the same typeface. The
+     * title_font key in the config styles the per-terminal titlebar, which is
+     * switched off, and never reached the tabs. */
+    font-family: "Meslo LG S for Powerline", monospace;
+    font-size: 10pt;
+}
+
+/* The active tab. #276b9b is the colour already used for
+ * title_transmit_bg_color in the Terminator config, so the accent stays
+ * consistent with the rest of the setup rather than introducing a new one.
+ * tab_position is bottom, so the line sits on the edge facing the terminal. */
+.terminator-terminal-window notebook tab:checked {
+    background-color: #1a1a1a;
+    border-top: 2px solid #276b9b;
+}
+
+.terminator-terminal-window notebook tab:checked label {
+    color: #e5e5e5;
+}
+
+.terminator-terminal-window notebook tab:hover label {
+    color: #b3b3b3;
+}
