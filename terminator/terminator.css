@@ -33,6 +33,26 @@
     min-height: 0;
 }
 
+/* --- The notebook itself ------------------------------------------------- */
+
+/* Yaru paints the notebook body white with a 1px border and 1px padding
+ * (.notebook { background-color: #FFFFFF; border-color: rgba(194,200,206,.8);
+ * border-width: 1px; padding: 1px }) and adds .notebook.frame { border: 1px
+ * solid #c2c8ce } - extracted from its gtk.gresource, not guessed. With one
+ * terminal the terminal covers it; as soon as there are tabs the notebook is
+ * the container, and that border is the white box around everything. Terminator
+ * clears the header background but never the body. */
+.terminator-terminal-window notebook,
+.terminator-terminal-window .notebook,
+.terminator-terminal-window .notebook.frame,
+.terminator-terminal-window notebook > stack {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
 /* --- Tab bar ------------------------------------------------------------- */
 
 .terminator-terminal-window .notebook.header,
@@ -55,12 +75,13 @@
 .terminator-terminal-window notebook tab label {
     color: #808080;
     font-weight: normal;
-    /* Same family as every profile's terminal font, a step down in size, so a
-     * tab label and the text under it are visibly the same typeface. The
-     * title_font key in the config styles the per-terminal titlebar, which is
-     * switched off, and never reached the tabs. */
-    font-family: "Meslo LG S for Powerline", monospace;
-    font-size: 10pt;
+    /* A serif, deliberately unlike the terminal's monospace, so a tab label
+     * reads as framing rather than as content. Charter was designed for
+     * low-resolution screens and holds up at this size where Liberation Serif
+     * and Times go spindly. The title_font key in the config styles the
+     * per-terminal titlebar, which is off, and never reached the tabs. */
+    font-family: "Bitstream Charter", serif;
+    font-size: 10.5pt;
 }
 
 /* The active tab. #276b9b is the colour already used for
