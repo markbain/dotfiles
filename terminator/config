@@ -1,4 +1,5 @@
 [global_config]
+  borderless = True
   handle_size = 0
   tab_position = bottom
   scroll_tabbar = True
@@ -27,117 +28,178 @@
     scroll_background = False
     palette = "#2c3e50:#c0392b:#16a085:#f39c12:#2980b9:#8e44ad:#27ae60:#bdc3c7:#555753:#e74c3c:#1abc9c:#f1c40f:#3498db:#9b59b6:#2ecc71:#ecf0f1"
     use_system_font = False
-  [[Beatrice]]
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Navy]]
     icon_bell = False
     background_color = "#192a56"
     background_darkness = 0.92
     cursor_color = "#f5f6fa"
-    font = Roboto Mono for Powerline 10
+    font = Meslo LG S for Powerline 11
     foreground_color = "#f5f6fa"
     scrollbar_position = hidden
     palette = "#2f3640:#c23616:#44bd32:#e1b12c:#40739e:#8c7ae6:#0097e6:#dcdde1:#353b48:#e84118:#4cd137:#fbc531:#487eb0:#9c88ff:#00a8ff:#f5f6fa"
     use_system_font = False
-  [[Celia]]
-    audible_bell = True
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Midnight]]
     visible_bell = True
     urgent_bell = True
     background_color = "#141a2e"
     cursor_color = "#ffb9f7"
-    font = ProFont for Powerline 13
+    font = Meslo LG S for Powerline 11
     scrollbar_position = hidden
     use_system_font = False
-  [[Connie]]
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Teal]]
     visible_bell = True
     urgent_bell = True
     background_color = "#143841"
     background_darkness = 0.0
     cursor_shape = ibeam
     cursor_color = "#ffc97f"
-    font = Space Mono for Powerline 12
+    font = Meslo LG S for Powerline 11
     foreground_color = "#00cdff"
     scrollbar_position = hidden
     scroll_background = False
     use_system_font = False
-  [[Emma]]
+    show_titlebar = False
+    cursor_blink = False
+  [[Pine]]
     background_color = "#131a12"
     background_darkness = 0.65
     cursor_shape = ibeam
     cursor_color = "#49dd27"
-    font = Source Code Pro for Powerline 12
+    font = Meslo LG S for Powerline 11
     scrollbar_position = hidden
     use_system_font = False
-  [[Erica]]
+    show_titlebar = False
+    cursor_blink = False
+  [[Petrol]]
     background_color = "#002b36"
     cursor_color = "#00d9fe"
-    font = Source Code Pro for Powerline 10
+    font = Meslo LG S for Powerline 11
     foreground_color = "#839496"
     scrollbar_position = hidden
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
-  [[Greta]]
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Forest]]
     background_color = "#0f3502"
     cursor_color = "#aaaaaa"
     scrollbar_position = hidden
-  [[Heidi]]
+    show_titlebar = False
+    cursor_blink = False
+    font = Meslo LG S for Powerline 11
+    cursor_shape = ibeam
+  [[Graphite]]
     background_color = "#2b3033"
     background_darkness = 0.62
     cursor_color = "#eaf50a"
-    font = Space Mono for Powerline 12
+    font = Meslo LG S for Powerline 11
     foreground_color = "#e8d9d9"
     scroll_background = False
     palette = "#485357:#d16d6d:#869a73:#c4ba8b:#7d8ea4:#7a747b:#819a9a:#d7d7d7:#555753:#ef8181:#bbe295:#fcf7ca:#b2c0cf:#ada4ac:#b5e2e2:#eeeeec"
     use_system_font = False
-  [[Karen]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Brick]]
     background_color = "#512f2f"
-    cursor_shape = underline
+    cursor_shape = ibeam
     cursor_color = "#f20505"
-    font = Go Mono for Powerline 11
+    font = Meslo LG S for Powerline 11
     foreground_color = "#ebdbb2"
     palette = "#5c3566:#cc0000:#4e9a06:#c4a000:#75507b:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     use_system_font = False
-  [[Mabel]]
-    background_color = "#002b36"
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+  [[Umber]]
+    background_color = "#3a2d20"
     cursor_color = "#aaaaaa"
-    font = Liberation Mono for Powerline 11
+    font = Meslo LG S for Powerline 11
     foreground_color = "#839496"
     use_system_font = False
-  [[Nadia]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Mauve]]
     cursor_color = "#aaaaaa"
-  [[Nina]]
+    background_color = "#44355b"
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    font = Meslo LG S for Powerline 11
+    cursor_shape = ibeam
+  [[Oxblood]]
     cursor_color = "#aaaaaa"
-  [[Olivia]]
+    background_color = "#4a1020"
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    font = Meslo LG S for Powerline 11
+    cursor_shape = ibeam
+  [[Espresso]]
     background_color = "#1a1210"
-    font = NovaMono for Powerline 12
+    font = Meslo LG S for Powerline 11
     foreground_color = "#e53c00"
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
-  [[Pearl]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Lagoon]]
     background_color = "#0e2b33"
-    font = Noto Mono for Powerline 12
+    font = Meslo LG S for Powerline 11
     scroll_background = False
     use_system_font = False
-  [[Rosie]]
-    background_color = "#002b36"
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Grape]]
+    background_color = "#3b1050"
     background_darkness = 0.0
-    font = Roboto Mono Medium for Powerline Medium 11
+    font = Meslo LG S for Powerline 11
     scroll_background = False
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     use_system_font = False
-  [[Stella]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Plum]]
     background_color = "#300a24"
     background_darkness = 0.78
     cursor_color = "#ffffff"
-    font = Ubuntu Mono derivative Powerline 12
+    font = Meslo LG S for Powerline 11
     foreground_color = "#ffffff"
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     use_system_font = False
-  [[Willa]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
+  [[Juniper]]
     background_color = "#15211a"
     background_darkness = 0.0
     cursor_color = "#47c589"
-    font = ProFont for Powerline 14
+    font = Meslo LG S for Powerline 11
     scroll_background = False
     use_system_font = False
+    scrollbar_position = hidden
+    show_titlebar = False
+    cursor_blink = False
+    cursor_shape = ibeam
 [layouts]
   [[default]]
     [[[child0]]]
@@ -154,7 +216,7 @@
     [[[terminal1]]]
       order = 0
       parent = child0
-      profile = Willa
+      profile = Juniper
       type = Terminal
       uuid = 56ff669e-0b6d-4ca1-8ec1-bbeded8920d7
   [[studio]]
@@ -181,14 +243,14 @@
       command = "bash -c 'cd /home/bain/code/misc/js/astrojs/client/mhairi_mcf && claude'"
       order = 0
       parent = pane0
-      profile = Rosie
+      profile = Grape
       type = Terminal
       uuid = 54898bf4-611c-4275-927d-f5ff341f02ca
     [[[termright0]]]
       command = "bash -c 'cd /home/bain/code/misc/js/astrojs/client/mhairi_mcf && exec bash'"
       order = 1
       parent = pane0
-      profile = Stella
+      profile = Plum
       type = Terminal
       uuid = bee7d5a5-d1c9-471f-8f39-b25a8a8f2a37
     [[[pane1]]]
@@ -201,14 +263,14 @@
       command = "bash -c 'cd /media/data/dev/misc/upwork-proposals && claude'"
       order = 0
       parent = pane1
-      profile = Beatrice
+      profile = Navy
       type = Terminal
       uuid = cbd786e4-88b7-401f-b0aa-9aeb4eb4d42a
     [[[termright1]]]
       command = "bash -c 'cd /media/data/dev/misc/upwork-proposals && exec bash'"
       order = 1
       parent = pane1
-      profile = Heidi
+      profile = Graphite
       type = Terminal
       uuid = 7f22a3f8-73ef-4c3a-9dff-371edd0488ac
     [[[pane2]]]
@@ -221,14 +283,14 @@
       command = "bash -c 'cd /home/bain/code/vvv/clients/www/nore && claude'"
       order = 0
       parent = pane2
-      profile = Willa
+      profile = Juniper
       type = Terminal
       uuid = 47eed7cf-7d94-4c3b-bb0c-cc51878e983e
     [[[termright2]]]
       command = "bash -c 'cd /home/bain/code/vvv/clients/www/nore && exec bash'"
       order = 1
       parent = pane2
-      profile = Connie
+      profile = Teal
       type = Terminal
       uuid = 43258b10-042c-4414-b493-43fa0bddd894
     [[[pane3]]]
@@ -241,14 +303,14 @@
       command = "bash -c 'cd /media/data/dev/bain/www/bain.design && claude'"
       order = 0
       parent = pane3
-      profile = Karen
+      profile = Brick
       type = Terminal
       uuid = dacd6f8f-3fa5-480f-b708-0fccc854c537
     [[[termright3]]]
       command = "bash -c 'cd /media/data/dev/bain/www/bain.design && exec bash'"
       order = 1
       parent = pane3
-      profile = Mabel
+      profile = Umber
       type = Terminal
       uuid = 6bd64988-796f-4c83-9416-29a884db6b5a
     [[[pane4]]]
@@ -261,14 +323,14 @@
       command = "bash -c 'cd /media/data/dev/vvv/clients/www/buddhist-film-foundation && claude'"
       order = 0
       parent = pane4
-      profile = Erica
+      profile = Petrol
       type = Terminal
       uuid = bab4f050-b7f2-467f-b1a5-9fa92f9ca79a
     [[[termright4]]]
       command = "bash -c 'cd /media/data/dev/vvv/clients/www/buddhist-film-foundation && exec bash'"
       order = 1
       parent = pane4
-      profile = Celia
+      profile = Midnight
       type = Terminal
       uuid = 2eb375a6-7748-4e8a-8870-875a74a0cd53
     [[[pane5]]]
@@ -281,14 +343,14 @@
       command = "bash -c 'cd /media/data/dev/misc/premium_domains && claude'"
       order = 0
       parent = pane5
-      profile = Rosie
+      profile = Grape
       type = Terminal
       uuid = 9c2bb819-c95c-40ca-8eef-41d5feb78148
     [[[termright5]]]
       command = "bash -c 'cd /media/data/dev/misc/premium_domains && exec bash'"
       order = 1
       parent = pane5
-      profile = Stella
+      profile = Plum
       type = Terminal
       uuid = 0745a358-108e-4566-b975-22591e4cdef6
     [[[pane6]]]
@@ -301,14 +363,14 @@
       command = "bash -c 'cd /media/data/dev/vvv/clients/www/kf-21 && claude'"
       order = 0
       parent = pane6
-      profile = Beatrice
+      profile = Navy
       type = Terminal
       uuid = 30fc2a6c-39ad-4043-a879-04c201893205
     [[[termright6]]]
       command = "bash -c 'cd /media/data/dev/vvv/clients/www/kf-21 && exec bash'"
       order = 1
       parent = pane6
-      profile = Heidi
+      profile = Graphite
       type = Terminal
       uuid = 191f82fc-654b-404d-8e29-65d4b7876a13
     [[[pane7]]]
@@ -321,14 +383,14 @@
       command = "bash -c 'cd /media/data/dev/bain-studio && claude'"
       order = 0
       parent = pane7
-      profile = Willa
+      profile = Juniper
       type = Terminal
       uuid = 58781a8d-1ae6-42a8-8cea-d229b99d8868
     [[[termright7]]]
       command = "bash -c 'cd /media/data/dev/bain-studio && exec bash'"
       order = 1
       parent = pane7
-      profile = Connie
+      profile = Teal
       type = Terminal
       uuid = dd7709a6-8f6b-4047-b4c1-34bb86f60b31
   [[projects]]
@@ -358,19 +420,19 @@
     [[[terminal3]]]
       order = 0
       parent = child2
-      profile = Rosie
+      profile = Grape
       type = Terminal
       uuid = 56ff669e-0b6d-4ca1-8ec1-bbeded8920d7
     [[[terminal4]]]
       order = 1
       parent = child2
-      profile = Celia
+      profile = Midnight
       type = Terminal
       uuid = 27d335a9-f8de-475a-8c30-9d084d184f48
     [[[terminal5]]]
       order = 1
       parent = child1
-      profile = Rosie
+      profile = Grape
       type = Terminal
       uuid = f77bd1ac-19f5-4a00-ae1d-1b419d1021dc
 [plugins]
