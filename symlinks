@@ -151,6 +151,21 @@ fi
 
 #--------------------------------------------------------------------#
 #
+#       tmux
+
+link "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
+echo -e "${GREEN}tmux config symlinked\n${NC}"
+
+# TPM and the plugins it manages are not in this repo: tmux.conf ends with a
+# `run` of ~/.tmux/plugins/tpm/tpm, and prefix + I installs the rest.
+if [[ ! -d "$HOME/.tmux/plugins/tpm" ]]
+then
+	echo -e "${RED}TPM is missing - tmux.conf's plugins will not load:${NC}"
+	echo -e "${RED}  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm${NC}\n"
+fi
+
+#--------------------------------------------------------------------#
+#
 #       VVV
 
 # Legacy: VVV now lives under /media/data/dev/vvv on this machine, so

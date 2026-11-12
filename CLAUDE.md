@@ -6,7 +6,7 @@ in history.
 
 ## The working tree is live config
 
-Seven paths outside this repo are symlinks **into this working tree**, so editing a file
+Eight paths outside this repo are symlinks **into this working tree**, so editing a file
 here changes live configuration immediately, with no deploy step:
 
 | Live path | This repo |
@@ -15,6 +15,7 @@ here changes live configuration immediately, with no deploy step:
 | `~/.bashrc` | `bash/bashrc` |
 | `~/.gitconfig` | `git/gitconfig` |
 | `~/.config/terminator/config` | `terminator/config` |
+| `~/.tmux.conf` | `tmux/tmux.conf` |
 | `~/.claude/rules` | `claude/rules/` |
 | `~/.claude-kf/rules` | `claude/rules/` |
 | `~/.oh-my-zsh/custom/alias.zsh` | `oh-my-zsh/alias.zsh` |
