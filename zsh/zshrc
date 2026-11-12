@@ -1,10 +1,14 @@
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="random"
+# Set name of the theme to load. Look in ~/.oh-my-zsh/themes/.
+# "random" loads a different theme every shell, which is why prompts kept
+# changing shape between tabs.
+# "minimal" is the shortest of the bundled themes that still carries what is
+# worth knowing: PROMPT='%2~ $(vcs_status)»%b ' - two path segments, the branch
+# in brackets with a red dot when the tree is dirty, and » as the prompt
+# character. No user, no host, no time, no exit code, no powerline segments.
+# `tp` still toggles to agnoster and back when the full prompt is wanted.
+ZSH_THEME="minimal"
 
 plugins=(git git-flow-completion nvm)
 
