@@ -24,6 +24,10 @@ on `--create-task` and `--update-task`, and sends nothing to Asana. The studio m
 will not fit, the detail belongs in the commit message or a comment — not in a longer
 description.
 
+**Pick the section by whether the work is happening now.** A task Claude creates for work it
+is doing in this session goes straight into `DOING` (`--task-section DOING`). A follow-up or
+anything left for later keeps the default, `NEXT UP`.
+
 **Never create a task via the Asana MCP or the API directly.** All writes go through
 `sync.py --create-task`, which uses the bainbot token, assigns the local ID and updates the
 mirror.

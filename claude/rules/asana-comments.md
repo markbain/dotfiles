@@ -6,35 +6,24 @@ ordinary project session, not the looper.
 
 **A leading `@mark` is what makes a comment reach Mark's Asana inbox at all.** Every comment
 goes through `sync.py`; a note opening `@mark` makes it add Mark as a **collaborator** on the
-task before posting, and that is what puts the note in his inbox. A note without the token
-posts silently. Never post to the Asana API directly.
-
-**It does not produce an Asana "mention", despite the name.** `sync.py` sends the documented
-rich-text form, `<a data-asana-gid="…"/>`, and Asana annotates it `data-asana-type="user"` —
-but a comment posted through the API never lands in an inbox **filtered to "Mentioned"**.
-Tested six ways on 2026-11-06, including three markup variants and the same comment posted
-from the web UI as the bot (which does reach the filter). So:
+task, wait 35 seconds, then post a real mention. It lands in his inbox filtered to
+**"Mentioned"**. A note without the token posts silently. Never post to the Asana API directly.
 
 | Posted via | "Mentioned" filter | Normal inbox | Browser notification |
 |---|---|---|---|
-| `sync.py` with `@mark` | no | **yes** | yes |
+| `sync.py` with `@mark` | **yes** | yes | yes |
 | `sync.py` without it | no | no | no |
 
-**The collaborator add is Asana's own documented procedure, not a workaround.** John_Vu, from
-Asana, in [forum thread 3326](https://forum.asana.com/t/any-way-to-create-user-mentions-using-api/3326)
-on 2024-01-05: a rich-text mention "does not automatically add the @mentioned user to the
-resource", and the prescribed step is a follow-up `addFollowersForTask` call. So **do not
-remove the collaborator add or its wait** — it is the only reason a note arrives, removing it
-delivers nothing at all, and it is what Asana tells integrations to do.
-
-Do not "fix" the rest in `sync.py` either: the markup is already correct. What remains
-unanswered by Asana is only the filter — their prescribed route delivers the note as activity
-on a followed task, which is precisely what an inbox filtered to "Mentioned" excludes. See
-BSTD-878.
+**Do not remove the collaborator add, and do not shorten its wait below 30 seconds.** The add
+is Asana's documented procedure (John_Vu, Asana, [forum thread 3326](https://forum.asana.com/t/any-way-to-create-user-mentions-using-api/3326),
+2024-01-05): an API mention does not add the user to the task by itself. The wait works around
+an Asana bug their staff confirmed on 2026-11-17: a comment posted less than 30 seconds after
+the user became a collaborator is not counted as a mention. With the old 3-second wait every
+note missed the filter. The markup was never the problem. See BSTD-878.
 
 ```bash
 python3 /media/data/dev/bain-studio/studio/sync.py --comment --task-gid {GID} \
-  --comment-text "@mark Review 2026-11-05: {what changed, one line} || Where: {branch} · {commit} · {URL or path} || Check: || 1. {imperative} || 2. {imperative} || Gaps: {known, not fixed}"
+  --comment-text "@mark Review: {what changed, one line} || Where: {branch} · {commit} · {URL or path} || Check: || 1. {imperative} || 2. {imperative} || Gaps: {known, not fixed}"
 ```
 
 From inside a project, write the same string as the task's `**Progress:**` line in
@@ -49,10 +38,21 @@ distinguish these notes.
 
 | Block | Holds | Limit |
 |---|---|---|
-| `Review {date}:` / `Blocked {date}:` | What changed, or the question | One line. Asana truncates at "See more", so the action lives here or nowhere. ISO date required. |
+| `Review:` / `Blocked:` | What changed, or the question | One line. Asana truncates at "See more", so the action lives here or nowhere. |
 | `Where:` | Branch, commits, URL or file path | One line |
 | `Check:` | What Mark does to verify | Max 5, one line each, imperative — something he *does*, not something he reads |
-| `Gaps:` | Work knowingly left undone | Omit entirely when there is none. Never a hedge. |
+| `Gaps:` | Work knowingly left undone | Omit entirely when there is none. Never a hedge. Anything meant to be done later is a task, cited by ID. |
+
+**A follow-up is a task, not a sentence.** Before a comment names further work - a follow-up,
+a next step, a `Gaps:` item that someone is meant to pick up - create it with
+`sync.py --create-task` and cite its local ID. Work mentioned only in a comment is lost.
+
+**Cite related tasks by local ID** (`BSTD-856`). `sync.py` turns every ID that resolves in a
+registered project's `asana-ids.json` into a link to that task, so Mark can jump to it. Write
+the bare ID: no URL, no GID, no task title.
+
+**No date in the note.** Asana stamps every comment; write `Review:` and `Blocked:`, not
+`Review 2026-11-05:`.
 
 **Never in an Asana comment:** reasoning, diagnosis, what was ruled out, alternatives
 considered, how many pages were tested, session usage. That belongs in the commit message,
