@@ -45,7 +45,7 @@ distinguish these notes.
 
 **A follow-up is a task, not a sentence.** Before a comment names further work - a follow-up,
 a next step, a `Gaps:` item that someone is meant to pick up - create it with
-`sync.py --create-task` and cite its local ID. Work mentioned only in a comment is lost.
+`sync.py --create-task --follow-up-of {this task's ID}` and cite its local ID. Work mentioned only in a comment is lost.
 
 **Cite related tasks by local ID** (`BSTD-856`). `sync.py` turns every ID that resolves in a
 registered project's `asana-ids.json` into a link to that task, so Mark can jump to it. Write
