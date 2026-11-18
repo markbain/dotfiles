@@ -1,0 +1,97 @@
+diff --color -ruN a/.claude/agents/copywriter.md b/.claude/agents/copywriter.md
+--- a/.claude/agents/copywriter.md	2026-11-16 18:12:46.075782386 +0100
++++ b/.claude/agents/copywriter.md	2026-11-16 18:12:46.103782156 +0100
+@@ -88,6 +88,11 @@
+ 
+ ## Output format
+ 
++The copywriter is **exempt by name** from the report budget in
++`~/.claude/rules/agent-reports.md`. The per-edit list below, with the rule quoted
++from the brand doc, is how Mark reviews the edits without reading the whole file
++again. Shortening it removes the review, not the noise. Report every change.
++
+ ```
+ VERDICT: pass | changes applied
+ SCOPE: public-facing | internal
+diff --color -ruN a/.claude/agents/hermes.md b/.claude/agents/hermes.md
+--- a/.claude/agents/hermes.md	2026-11-16 18:12:46.075782386 +0100
++++ b/.claude/agents/hermes.md	2026-11-16 18:12:46.103782156 +0100
+@@ -50,28 +50,39 @@
+ 
+ ### 4. Report
+ 
+-Output a sync report:
++Report format follows `~/.claude/rules/agent-reports.md`. A sync report is one of
++that rule's cross-project exceptions: no character budget, because length scales
++with the number of projects. It is bounded the other way instead — **report only
++what changed.**
++
++A project earns a section only if it has at least one of: a task new since the
++last sync, an overdue task, or an error. Nothing else puts it in the report.
++"No progress note" is **not** a trigger: it is a standing condition across every
++mirror, so triggering on it returns every project every time. It appears as a
++count on a project that already qualified, and nowhere else.
+ 
+ ```
+ ## Hermes Sync Report — {YYYY-MM-DD HH:MM}
+ 
+ ### {Project Name} ({PREFIX})
+-- Open tasks: N
++- New since last sync: N (list them by local ID and name)
+ - Overdue: N (list them by local ID and name)
+-- No progress note: N (list them)
+-- Last synced: {timestamp from log}
++- No progress note: N (count only, and only on a project already listed above)
+ 
+-[repeat per project]
++[repeat only for projects with a new task, an overdue task, or an error]
+ 
+ ### Errors
+-[any from the log, or "None"]
++[any from the log — omit this heading entirely when there are none]
+ ```
+ 
+-End with:
++End with this line, whose `Hermes: sync complete` prefix is fixed:
+ ```
+-Hermes: sync complete — {N} projects updated
++Hermes: sync complete — {N} projects, {N} changed, {N} quiet, {N} errors
+ ```
+ 
++The error count is always present, so "no errors" is distinguishable from "not
++checked". If nothing changed anywhere, that closing line is the whole report.
++
+ ---
+ 
+ ## Notes
+diff --color -ruN a/.claude/agents/mnemosyne.md b/.claude/agents/mnemosyne.md
+--- a/.claude/agents/mnemosyne.md	2026-11-16 18:12:46.075782386 +0100
++++ b/.claude/agents/mnemosyne.md	2026-11-16 18:12:46.103782156 +0100
+@@ -167,6 +167,11 @@
+ 
+ ## Output format
+ 
++Report format follows `~/.claude/rules/agent-reports.md`, with that rule's data
++exception: when a caller (Athena, Harvest) asked for comps or an audit table, the
++rows are the deliverable and stay in full. The budget applies to the prose around
++them. A report going to Mark rather than to another agent takes the full shape.
++
+ Always end with a status line:
+ 
+ ```
+diff --color -ruN a/.claude/agents/studio-pm.md b/.claude/agents/studio-pm.md
+--- a/.claude/agents/studio-pm.md	2026-11-16 18:12:46.075782386 +0100
++++ b/.claude/agents/studio-pm.md	2026-11-16 18:12:46.103782156 +0100
+@@ -125,6 +125,12 @@
+ - Tasks with no progress note update in >14 days
+ - Immediate priorities table from mirror
+ 
++**Only for projects with something in one of those four.** A project with nothing
++overdue, nothing unanswered, nothing stale and nothing imminent gets no section —
++count it in a single closing line of quiet projects and move on. This is a
++cross-project exception in `~/.claude/rules/agent-reports.md`: no character
++budget, bounded by reporting only what needs Mark instead.
++
+ ---
+ 
+ ## Memory
