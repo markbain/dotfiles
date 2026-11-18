@@ -23,8 +23,13 @@ note missed the filter. The markup was never the problem. See BSTD-878.
 
 ```bash
 python3 /media/data/dev/bain-studio/studio/sync.py --comment --task-gid {GID} \
-  --comment-text "@mark Review: {what changed, one line} || Where: {branch} · {commit} · {URL or path} || Check: || 1. {imperative} || 2. {imperative} || Gaps: {known, not fixed}"
+  --comment-text "@mark Review: {what changed, one line} || Check: || 1. {imperative} || 2. {imperative} || Gaps: {known, not fixed} || Where: {branch} · {commit} · {URL or path}"
 ```
+
+**Two comments, not one.** `sync.py` splits the `Where:` block off and posts it as its own
+silent comment directly under the summary. The `@mark` summary says what changed and what
+Mark does, in words: **no path, branch, commit, URL or file name in it** — not in `Review:`,
+not in a `Check:` item. `sync.py` refuses an `@mark` summary that carries one.
 
 From inside a project, write the same string as the task's `**Progress:**` line in
 `asana-mirror.md` and let the scheduled sync post it. `||` separates blocks, expanded to
@@ -38,10 +43,25 @@ distinguish these notes.
 
 | Block | Holds | Limit |
 |---|---|---|
-| `Review:` / `Blocked:` | What changed, or the question | One line. Asana truncates at "See more", so the action lives here or nowhere. |
-| `Where:` | Branch, commits, URL or file path | One line |
-| `Check:` | What Mark does to verify | Max 5, one line each, imperative — something he *does*, not something he reads |
+| `Review:` / `Blocked:` / `Done:` | What changed, the question, or the outcome | One short line. Asana truncates at "See more", so the action lives here or nowhere. |
+| `Check:` | What Mark does to verify | Max 3, one short line each, imperative — something he *does*, not something he reads. No locations. |
 | `Gaps:` | Work knowingly left undone | Omit entirely when there is none. Never a hedge. Anything meant to be done later is a task, cited by ID. |
+| `Subtasks:` | Each open subtask: done (Mark ticks it) or why it is not needed | Required on a `Done` note while any subtask is open. |
+| `Where:` | Branch, commits, URL or file path | Posted as the separate silent comment. |
+
+**Write less.** The summary is capped at 500 characters, 150 per block, 6 blocks. Aim well
+under: a `Review:` line and two checks is usually the whole note.
+
+**A `Done` handover must account for the whole task.**
+
+- **Open subtasks.** A task is not done while its subtasks are open unless the note says, for
+  each, that it is done (so Mark ticks it) or why it is not needed (not required, no longer
+  relevant, covered elsewhere). `sync.py` refuses a `Done` note on a task with open subtasks
+  and no `Subtasks:` block.
+- **Decision tasks.** When the task *is* a decision, the note states the decision itself and
+  the `Where:` comment names where it is recorded (the project doc, ADR or site map that now
+  says it). Record it there first. A decision that lives only in a chat or a comment thread
+  is not on record, and the task is not done.
 
 **A follow-up is a task, not a sentence.** Before a comment names further work - a follow-up,
 a next step, a `Gaps:` item that someone is meant to pick up - create it with
@@ -63,8 +83,9 @@ a fix is not the review instructions for it.
 edits the existing comment in place when no human comment has landed since. A "Correction …,
 replacing my earlier note" comment is a defect.
 
-**These limits are enforced, not advisory.** `sync.py` refuses to post a note over 900
-characters, with any block over 200, or with more than 8 blocks. It logs an error naming the
+**These limits are enforced, not advisory.** `sync.py` refuses to post a summary over 500
+characters, with any block over 150, with more than 6 blocks, or (with `@mark`) naming a
+location; a `Where:` over 300; or a `Done` with open subtasks and no `Subtasks:` block. It logs an error naming the
 task and leaves the note in the mirror to be rewritten; the task's own state still syncs. If a
 note will not fit, the detail belongs in the commit message.
 
