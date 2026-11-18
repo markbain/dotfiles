@@ -71,34 +71,6 @@ proj() {
 # Client SSH aliases: kept out of the dotfiles repo, which is public
 [ -f "$HOME/.config/secrets/ssh-aliases.zsh" ] && source "$HOME/.config/secrets/ssh-aliases.zsh"
 
-# ── Studio project recap prompt ──────────────────────────────────────────────
-# When cd-ing into a registered project directory, prompt for a recap.
-_studio_projects_json="/media/data/dev/bain-studio/studio/projects.json"
-
-function _studio_recap_prompt() {
-  [[ -f "$_studio_projects_json" ]] || return
-  local paths
-  paths=$(python3 -c "
-import json
-data = json.load(open('$_studio_projects_json'))
-for p in data:
-    print(p['path'])
-" 2>/dev/null)
-  echo "$paths" | grep -qxF "$PWD" || return
-  # Only prompt in interactive shells, not in subshells
-  [[ -o interactive ]] || return
-  echo -n "[studio] Want a recap? [y/N] "
-  read -r -k 1 _recap_answer
-  echo
-  if [[ "$_recap_answer" =~ ^[Yy]$ ]]; then
-    claude /recap
-  fi
-}
-
-autoload -U add-zsh-hook
-add-zsh-hook chpwd _studio_recap_prompt
-# ─────────────────────────────────────────────────────────────────────────────
-
 
 # Studio scripts
 alias create-repo='/media/data/dev/bain-studio/studio/scripts/repo-create'
