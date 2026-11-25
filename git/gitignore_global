@@ -19,3 +19,5 @@ wp-cli.yml
 *.log
 
 **/.claude/settings.local.json
+
+**/.claude/.cc-writes/

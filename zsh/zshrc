@@ -85,7 +85,7 @@ alias claude-sessions-status='/home/bain/ops/bain-studio/studio/scripts/session-
 # setup-wp: WP project scaffold
 alias setup-wp='bash ~/bin/setup-wp'
 # nas-reconnect: remount NAS shares + restart Plex/Navidrome/Audiobookshelf after a power cut
-alias nas-reconnect='"/media/data/Dropbox/Personal/Personal Notes/tech/Media Center/Home media server/nas-reconnect.sh"'
+alias nas-reconnect='"/media/data/Dropbox/Personal/Personal Notes/Tech/Media Center/Home Media Server/nas-reconnect.sh"'
 
 # Open a normal tabbed window on an app window's own Chrome profile.
 # The asana/slack app windows run --app=, which has no toolbar, so extensions
