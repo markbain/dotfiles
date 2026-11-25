@@ -62,7 +62,19 @@ rewriting.
 followers, dependencies, Priority and every other custom field on the task. Edit the mirror
 line and run `sync.py`; don't reach for the Asana UI or the MCP. The exceptions are the
 description (above), the task **title**, which takes `--update-task --task-name`, and
-**completion**, which happens in Asana.
+**completion**, below.
+
+**Tick a task off yourself when it is low impact and nothing waits on Mark** (Mark,
+2026-11-25). Low impact: studio tooling, docs, Asana or client housekeeping; nothing outside
+the studio sees it, it is easy to undo, and it is not a decision. Then:
+
+```bash
+python3 /media/data/dev/bain-studio/studio/sync.py --complete-task {ID} --reason "{why it is done}"
+```
+
+It posts the reason as a silent comment and refuses open subtasks or a "Waiting on Mark" tag.
+`--reopen-task {ID} --reason "..."` undoes it. Anything that needs his review, his decision or
+his eyes outside the studio gets a `Review`/`Done` note instead, and he ticks it.
 
 Full reference: `/media/data/dev/bain-studio/docs/gods/hermes/sync.md` and
 `/media/data/dev/bain-studio/docs/utilities/new-task.md`.
