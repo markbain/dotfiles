@@ -23,13 +23,21 @@ note missed the filter. The markup was never the problem. See BSTD-878.
 
 ```bash
 python3 /media/data/dev/bain-studio/studio/sync.py --comment --task-gid {GID} \
-  --comment-text "@mark Review: {what changed, one line} || Check: || 1. {imperative} || 2. {imperative} || Gaps: {known, not fixed} || Where: {branch} · {commit} · {URL or path}"
+  --comment-text "@mark Review: {what Mark does now, one imperative line} || {what changed, one line} || Check: || 1. {imperative} || Gaps: {known, not fixed} || Where: {branch} · {commit} · {URL or path}"
 ```
 
-**Two comments, not one.** `sync.py` splits the `Where:` block off and posts it as its own
-silent comment directly under the summary. The `@mark` summary says what changed and what
-Mark does, in words: **no path, branch, commit, URL or file name in it** — not in `Review:`,
-not in a `Check:` item. `sync.py` refuses an `@mark` summary that carries one.
+**The first line is Mark's action.** After `Review:` or `Blocked:` comes what he does now, in
+words ("Review: merge the overnight branch, restart the listener, then try a small change on a
+factory task"). What changed comes second. A note he has to translate into an action has
+buried it.
+
+**One comment, with `Where:` at the foot** (since 2026-11-25). `sync.py` moves the `Where:`
+block to the end of the same comment, below a blank line. The summary above it still carries
+**no path, branch, commit, URL or file name** — not in `Review:`, not in a `Check:` item.
+`sync.py` refuses an `@mark` summary that carries one.
+
+**"Waiting on Mark" tag.** A `Review`, `Blocked` or `Done` note tags the task; every full sync
+removes the tag once the task is completed or Mark has replied. Never add or remove it by hand.
 
 From inside a project, write the same string as the task's `**Progress:**` line in
 `asana-mirror.md` and let the scheduled sync post it. `||` separates blocks, expanded to
@@ -43,11 +51,11 @@ distinguish these notes.
 
 | Block | Holds | Limit |
 |---|---|---|
-| `Review:` / `Blocked:` / `Done:` | What changed, the question, or the outcome | One short line. Asana truncates at "See more", so the action lives here or nowhere. |
+| `Review:` / `Blocked:` / `Done:` | What Mark does now, the question, or the outcome | One short line. Asana truncates at "See more", so the action lives here or nowhere. |
 | `Check:` | What Mark does to verify | Max 3, one short line each, imperative — something he *does*, not something he reads. No locations. |
 | `Gaps:` | Work knowingly left undone | Omit entirely when there is none. Never a hedge. Anything meant to be done later is a task, cited by ID. |
 | `Subtasks:` | Each open subtask: done (Mark ticks it) or why it is not needed | Required on a `Done` note while any subtask is open. |
-| `Where:` | Branch, commits, URL or file path | Posted as the separate silent comment. |
+| `Where:` | Branch, commits, URL or file path | At the foot of the same comment. |
 
 **Write less.** The summary is capped at 500 characters, 150 per block, 6 blocks. Aim well
 under: a `Review:` line and two checks is usually the whole note.
