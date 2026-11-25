@@ -10,8 +10,20 @@ than in a comment.
 2. What done looks like.
 3. Where the work is — paths, URLs, task GIDs, branch names.
 
-Per ADR 022 it carries its own context: name the client, page or section in the title and the
-description rather than leaning on the Asana section, a parent task or its place in a list.
+Per ADR 022 it carries its own context rather than leaning on the Asana section, a parent task
+or its place in a list.
+
+**A title is the task itself, as a plain sentence. No prefix.** Nothing before a colon: not a
+client or project name (`Acme:`, `Privacy policy:`, `Theme review:` in the Theme
+Review project), a tool (`sync.py:`), a component (`Looper runner:`), a workstream
+(`KF archive:`) or a kind (`Question:`, `Decision:`). Prefixes make a narrow task list
+impossible to scan, because every row starts with the same words. Where the page, section or
+tool matters, put it inside the sentence: "Stop the looper runner starting empty sessions".
+
+**Group tasks with Asana's own links, never with title text:** the project (multi-home if
+needed), a section, a tag, a custom field, a dependency, or a parent. Mark never prefixes the
+tasks he writes; match them. Studio policy, Mark's decision, 25 November 2026 (ADR 022
+addendum).
 
 **Never in a description:** how the problem arose, what was ruled out, alternatives weighed,
 a session narrative, what was tested, how many pages were checked, or dates of past sessions.
