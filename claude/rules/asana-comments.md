@@ -31,6 +31,12 @@ words ("Review: merge the overnight branch, restart the listener, then try a sma
 factory task"). What changed comes second. A note he has to translate into an action has
 buried it.
 
+**The label says where the task stands.** `Done:` finished; `Review:` finished once Mark does
+the one thing named; `Blocked:` not finished. What changed is a plain line, no label. A
+handover carries no labels but `Review`/`Blocked`/`Done`, `Check`, `Gaps`, `Subtasks` and
+`Where` - `sync.py` refuses `Changed:`, `Not done:` and the like. Unfinished or untested work
+goes under `Gaps:`.
+
 **One comment, with `Where:` at the foot** (since 2026-11-25). `sync.py` moves the `Where:`
 block to the end of the same comment, below a blank line. The summary above it still carries
 **no path, branch, commit, URL or file name** — not in `Review:`, not in a `Check:` item.
